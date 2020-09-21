@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-entity" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-repository" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-validation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unpla-command-pattern-web" charset="UTF-8" />
+  </component>
+</project>

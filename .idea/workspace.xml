@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gYfu47uhiYWnR98321uDgfCUP5" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.28390804" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringUnplaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="unpla-command-pattern-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.unpla.SpringUnplaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="" />
+      <created>1598296665469</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598296665469</updated>
+      <workItem from="1598296669411" duration="410000" />
+      <workItem from="1598701022526" duration="1957000" />
+      <workItem from="1598807348278" duration="4721000" />
+      <workItem from="1598851727093" duration="2329000" />
+      <workItem from="1598855794567" duration="1080000" />
+      <workItem from="1598977565275" duration="5825000" />
+      <workItem from="1599121308550" duration="8802000" />
+      <workItem from="1599327940340" duration="3171000" />
+      <workItem from="1599501351565" duration="3147000" />
+      <workItem from="1600013353462" duration="3197000" />
+      <workItem from="1600150485617" duration="5330000" />
+      <workItem from="1600190463933" duration="2742000" />
+      <workItem from="1600243991827" duration="3345000" />
+      <workItem from="1600591307463" duration="3130000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
