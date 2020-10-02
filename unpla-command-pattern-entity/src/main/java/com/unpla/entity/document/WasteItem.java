@@ -1,7 +1,7 @@
 package com.unpla.entity.document;
 
-import com.unpla.entity.enums.PeriodOfTime;
-import com.unpla.entity.enums.WasteCategory;
+import com.unpla.entity.enums.MainWasteCategory;
+import com.unpla.entity.enums.SubWasteCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,11 +21,10 @@ public class WasteItem {
     @Id
     private String id;
     private List<String> photo;
-    private WasteCategory category;
+    private MainWasteCategory mainWasteCategory;
+    private SubWasteCategory subWasteCategory;
     private float kilogramWeight;
-    private User user;
-    private Date pickUpDate;
-    private PeriodOfTime period;
+    private String userId;
 
     private Date creationDate = new Date();
     private String createdBy;

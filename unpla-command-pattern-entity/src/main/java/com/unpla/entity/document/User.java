@@ -1,7 +1,6 @@
 package com.unpla.entity.document;
 
 import com.unpla.entity.embedded.Coordinate;
-import com.unpla.entity.embedded.Store;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +9,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -28,7 +28,9 @@ public class User{
     private int point;
     private String Address;
     private Coordinate coordinate;
-    private Store store;
+    private String recyclerId;
+    private List<String> cartId;
+    private boolean isRecyclerActive;
 
 
     private Date creationDate = new Date();

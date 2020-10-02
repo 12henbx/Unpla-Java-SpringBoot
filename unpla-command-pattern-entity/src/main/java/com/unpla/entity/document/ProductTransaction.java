@@ -1,5 +1,6 @@
 package com.unpla.entity.document;
 
+import com.unpla.entity.enums.PaymentMethod;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,12 @@ public class ProductTransaction {
     private List<String> idrecycledProducts;
     private int quantity;
     private long totalPrice;
+
+    private String userId;
+    private String recyclerId;
+    private String cartId;
+
+    private PaymentMethod paymentMethodEnum;
 
 
     private String createdBy;

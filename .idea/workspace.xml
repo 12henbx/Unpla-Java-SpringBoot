@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="" />
+    <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/ProductTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/ProductTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/RecycledProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/RecycledProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/WasteItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/WasteItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/embedded/Store.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/enums/WasteCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/enums/MainWasteCategory.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +24,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -28,9 +41,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1gYfu47uhiYWnR98321uDgfCUP5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
@@ -81,10 +96,29 @@
       <workItem from="1600190463933" duration="2742000" />
       <workItem from="1600243991827" duration="3345000" />
       <workItem from="1600591307463" duration="3130000" />
+      <workItem from="1600685664051" duration="3071000" />
+      <workItem from="1600851541941" duration="2206000" />
+      <workItem from="1601116325066" duration="4637000" />
+      <workItem from="1601187356221" duration="5024000" />
+      <workItem from="1601483155934" duration="1340000" />
+      <workItem from="1601617567487" duration="1063000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

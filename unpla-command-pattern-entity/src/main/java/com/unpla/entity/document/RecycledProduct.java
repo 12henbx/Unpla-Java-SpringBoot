@@ -25,7 +25,8 @@ public class RecycledProduct {
     private int quantity;
     private float totalRating;
     private List<Review> reviews;
-    private String idUserRecycler;
+    private long purchasedTimes;
+    private String recyclerId;
 
     private Date creationDate = new Date();
     private String createdBy;
