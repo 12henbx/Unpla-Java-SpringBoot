@@ -3,12 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/ProductTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/ProductTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/RecycledProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/RecycledProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/WasteItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/WasteItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/embedded/Store.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/enums/WasteCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/enums/MainWasteCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/basic/BasicAuthenticationSuccessHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/bearer/BearerTokenReactiveAuthenticationManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/bearer/ServerHttpBearerAuthenticationConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/AuthorizationHeaderPayload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTCustomSigner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTCustomVerifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTSecrets.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTTokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/UsernamePasswordAuthenticationBearer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -43,13 +49,22 @@
   <component name="ProjectId" id="1gYfu47uhiYWnR98321uDgfCUP5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
-    <property name="settings.editor.selected.configurable" value="spring.boot" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.unpla.service.command" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -101,7 +116,13 @@
       <workItem from="1601116325066" duration="4637000" />
       <workItem from="1601187356221" duration="5024000" />
       <workItem from="1601483155934" duration="1340000" />
-      <workItem from="1601617567487" duration="1063000" />
+      <workItem from="1601617567487" duration="10270000" />
+      <workItem from="1601708910508" duration="13813000" />
+      <workItem from="1601893781322" duration="3478000" />
+      <workItem from="1602003515436" duration="5417000" />
+      <workItem from="1602055314925" duration="1934000" />
+      <workItem from="1602515192626" duration="1981000" />
+      <workItem from="1602572425542" duration="6087000" />
     </task>
     <servers />
   </component>

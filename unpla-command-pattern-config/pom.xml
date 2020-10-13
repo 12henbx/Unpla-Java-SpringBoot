@@ -11,5 +11,13 @@
 
     <artifactId>unpla-command-pattern-config</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.unpla</groupId>
+            <artifactId>unpla-command-pattern-entity</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
