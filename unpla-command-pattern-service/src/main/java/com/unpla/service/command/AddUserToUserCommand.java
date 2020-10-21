@@ -1,9 +1,10 @@
 package com.unpla.service.command;
 
 import com.blibli.oss.command.Command;
-import com.unpla.entity.document.User;
-import com.unpla.model.controller.UserAddRequest;
-import com.unpla.model.service.AddUserToUserResponse;
+import com.unpla.model.controller.UserAddResponse;
+import com.unpla.model.service.AddUserToUserRequest;
+import reactor.core.publisher.Mono;
 
-public interface AddUserToUserCommand extends Command<UserAddRequest, AddUserToUserResponse> {
+public interface AddUserToUserCommand extends Command<AddUserToUserRequest, UserAddResponse> {
+//    public Mono<UserAddResponse> execute(AddUserToUserRequest request);
 }

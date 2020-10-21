@@ -1,27 +1,35 @@
 package com.unpla.controller;
 
-import com.blibli.oss.common.response.ResponseHelper;
-import com.unpla.config.security.JWTUtil;
-import com.unpla.config.security.PBKDF2Encoder;
+import com.blibli.oss.command.CommandExecutor;
+//import com.unpla.config.security.JWTUtil;
+//import com.unpla.config.security.PBKDF2Encoder;
 import com.unpla.model.controller.Response;
-import com.unpla.service.ServiceExecutor;
+import com.unpla.model.controller.UserAddResponse;
+import com.unpla.model.controller.UserLoginResponse;
+import com.unpla.model.service.AddUserToUserRequest;
+import com.unpla.model.service.LoginUserRequest;
 import com.unpla.service.command.AddUserToUserCommand;
-import com.unpla.service.command.impl.AddUserToUserCommandImpl;
+import com.unpla.service.command.UserLoginToUserCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
 
+@RestController
 public class UserController {
-    @Autowired
-    private JWTUtil jwtUtil;
 
     @Autowired
-    private PBKDF2Encoder passwordEncoder;
+    private CommandExecutor commandExecutor;
 
-    @Autowired
-    private ServiceExecutor serviceExecutor;
+//    @Autowired
+//    private SchedulerHelper schedulerHelper;
+
+//    @Autowired
+//    private Scheduler commandScheduler;
 
 //    @PostMapping(
 //            value = "/api/customers",
@@ -34,21 +42,7 @@ public class UserController {
 //                .subscribeOn(commandScheduler);
 //    }
 
-//    @RequestMapping(value = "/register", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
-//    public Mono<Response<Boolean>> register(@RequestBody RegisterRequest request) {
-//        return commandExecutor.execute(RegisterCommand.class, registerRequestToInput(request))
-//                .map(ResponseHelper::ok)
-//                .subscribeOn(Schedulers.elastic());
-//    }
-
-//    private RegisterInput registerRequestToInput(RegisterRequest request) {
-//        RegisterInput input = RegisterInput.builder().build();
-//        BeanUtils.copyProperties(request, input);
-//        return input;
-//    }
-
-
-//    @PostMapping("/login")
+//    @PostMapping("/login") // dari website content list di kiri
 //    public Mono<UserDetails> login(ServerWebExchange exchange) {
 //
 //        return ReactiveSecurityContextHolder.getContext()
@@ -60,17 +54,20 @@ public class UserController {
 //                });
 //    }
 
-//    @PostMapping("/login")
-//    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest authRequest) {
-//        User u = userService.findByUsername(authRequest.getUsername());
-//        if (u != null) {
-//            if (passwordEncoder.encode(authRequest.getPassword()).equals(u.getPassword())) {
-//                return ResponseEntity.ok(new AuthResponse(jwtUtil.generateToken(u)));
-//            } else {
-//                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-//            }
-//        } else {
+    @PostMapping(value = "/signup", produces = MediaType.APPLICATION_JSON_VALUE) // dari ard333-nya
+    public Mono<Response<UserAddResponse>> signup(@RequestBody AddUserToUserRequest userRequest) {
+
+        return commandExecutor.execute(AddUserToUserCommand.class, userRequest)
+                .map(Response::ok)
+                .subscribeOn(Schedulers.elastic());
+    }
+
+    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE) // dari ard333-nya
+    public Mono<Response<UserLoginResponse>> login(@RequestBody LoginUserRequest loginRequest) {
 //            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-//        }
-//    }
+
+        return commandExecutor.execute(UserLoginToUserCommand.class, loginRequest)
+                .map(Response::ok)
+                .subscribeOn(Schedulers.elastic());
+    }
 }

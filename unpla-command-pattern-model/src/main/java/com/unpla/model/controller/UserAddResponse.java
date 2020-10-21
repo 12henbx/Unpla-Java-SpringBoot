@@ -1,11 +1,15 @@
 package com.unpla.model.controller;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-public class UserAddRequest {
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserAddResponse {
 
     private String username;
 

@@ -34,6 +34,15 @@
     </properties>
 
     <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-tomcat</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
@@ -81,11 +90,11 @@
             <artifactId>command-plugin</artifactId>
             <version>2.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.blibli.oss</groupId>
-            <artifactId>common-plugin</artifactId>
-            <version>2.0.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.blibli.oss</groupId>-->
+<!--            <artifactId>blibli-backend-framework-reactor</artifactId>-->
+<!--            <version>0.0.6</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
@@ -106,8 +115,13 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-webflux-ui</artifactId>
-            <version>1.4.4</version>
+            <version>1.4.8</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springdoc</groupId>-->
+<!--            <artifactId>springdoc-openapi-ui</artifactId>-->
+<!--            <version>1.4.8</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>

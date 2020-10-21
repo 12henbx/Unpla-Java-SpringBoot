@@ -4,17 +4,35 @@
     <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/basic/BasicAuthenticationSuccessHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/bearer/BearerTokenReactiveAuthenticationManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/bearer/ServerHttpBearerAuthenticationConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/AuthorizationHeaderPayload.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTCustomSigner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTCustomVerifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTSecrets.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/JWTTokenService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/jwt/UsernamePasswordAuthenticationBearer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/PBKDF2Encoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/PBKDF2Encoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/basic/BasicAuthenticationSuccessHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/bearer/BearerTokenReactiveAuthenticationManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/bearer/ServerHttpBearerAuthenticationConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/jwt/AuthorizationHeaderPayload.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/jwt/JWTCustomSigner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/jwt/JWTCustomVerifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/jwt/JWTSecrets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/jwt/JWTTokenService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/jwt/UsernamePasswordAuthenticationBearer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/DeleteMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/UserAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/UserAddResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/AddUserToUserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/AddUserToUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/GetProductTransactionListByIdRequest$GetProductTransactionListByIdRequestBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/GetProductTransactionListByIdRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-properties/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-properties/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-properties/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-properties/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/AddUserToUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/AddUserToUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddUserToUserCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddUserToUserCommandImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/MessageServiceDelete.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/SpringUnplaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/SpringUnplaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/SpringUnplaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/SpringUnplaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/MessageController.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +44,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -122,7 +154,14 @@
       <workItem from="1602003515436" duration="5417000" />
       <workItem from="1602055314925" duration="1934000" />
       <workItem from="1602515192626" duration="1981000" />
-      <workItem from="1602572425542" duration="6087000" />
+      <workItem from="1602572425542" duration="9114000" />
+      <workItem from="1602842632230" duration="9004000" />
+      <workItem from="1602914365044" duration="5549000" />
+      <workItem from="1603130527825" duration="5438000" />
+      <workItem from="1603166732567" duration="19791000" />
+      <workItem from="1603206774104" duration="776000" />
+      <workItem from="1603253246375" duration="11348000" />
+      <workItem from="1603299115583" duration="371000" />
     </task>
     <servers />
   </component>
