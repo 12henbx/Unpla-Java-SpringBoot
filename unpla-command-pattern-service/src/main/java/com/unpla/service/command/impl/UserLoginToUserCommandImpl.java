@@ -35,9 +35,9 @@ public class UserLoginToUserCommandImpl implements UserLoginToUserCommand {
 //        return Mono.fromCallable(() -> convertToUser(request))
 //                .flatMap(user -> userRepository.save(user))
 //                .map(this::convertToUserResponse);
-        return userRepository.findByUsername(request.getUsername()) // TODO : ni uncomment
+        return userRepository.findByUsername(request.getUsername())
                 .map(userOne -> {
-                    if (passwordEncoder.encode(request.getPassword()).equals(userOne.getPassword())){
+                    if (passwordEncoder.matches(request.getPassword(), userOne.getPassword())){
                         return new UserLoginResponse(jwtUtil.generateToken(userOne));
                     }
                     throw new RuntimeException("Token tidak ditemukan");

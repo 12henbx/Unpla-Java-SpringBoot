@@ -1,6 +1,8 @@
 package com.unpla.service.command.impl;
 
 //import com.unpla.config.security.JWTUtil;
+import com.unpla.config.security.JWTUtil;
+import com.unpla.config.security.PBKDF2Encoder;
 import com.unpla.entity.document.User;
 import com.unpla.model.controller.UserAddResponse;
 import com.unpla.model.service.AddUserToUserRequest;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -19,6 +22,12 @@ public class AddUserToUserCommandImpl implements AddUserToUserCommand {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private JWTUtil jwtUtil;
+
+    @Autowired
+    private PBKDF2Encoder passwordEncoder;
 
     @Override
     public Mono<UserAddResponse> execute(AddUserToUserRequest request) {
@@ -29,19 +38,28 @@ public class AddUserToUserCommandImpl implements AddUserToUserCommand {
 
     private User convertToUser(AddUserToUserRequest req){
         User user = User.builder()
-                .id(UUID.randomUUID().toString())
                 .fullName(req.getNama())
                 .username(req.getUsername())
-                .password(req.getPassword())
+                .password(passwordEncoder.encode(req.getPassword()))
                 .email(req.getEmail())
+                .lastModifiedDate(new Date().getTime())
+                .lastModifiedBy(req.getUsername())
+                .createdDate(new Date().getTime())
+                .createdBy(req.getUsername())
                 .build();
-
         return user;
     }
 
     private UserAddResponse convertToUserResponse(User user){
-        UserAddResponse userAddResponse = new UserAddResponse();
-        BeanUtils.copyProperties(user,userAddResponse);
+        UserAddResponse userAddResponse = UserAddResponse.builder()
+                .username(user.getUsername())
+                .isSuccess(Boolean.TRUE)
+                .lastModifiedDate(user.getLastModifiedDate())
+                .lastModifiedBy(user.getLastModifiedBy())
+                .createdDate(user.getCreatedDate())
+                .createdBy(user.getCreatedBy())
+                .build();
+
         return userAddResponse;
     }
 }

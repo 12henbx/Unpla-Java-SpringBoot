@@ -42,7 +42,7 @@ public class WebSecurityConfig {
                 .securityContextRepository(securityContextRepository)
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
-                .pathMatchers("/login", "/swagger-ui.html").permitAll()
+                .pathMatchers("/login", "/signup", "/swagger-ui.html/**", "/webjars/**", "/v3/api-docs/**").permitAll()
                 .anyExchange().authenticated()
                 .and().build();
     }

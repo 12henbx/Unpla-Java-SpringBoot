@@ -11,9 +11,6 @@ import javax.validation.constraints.NotBlank;
 public class AddUserToUserRequest implements ServiceRequest {
 
     @NotBlank
-    private String userId;
-
-    @NotBlank
     private String username;
 
     @NotBlank

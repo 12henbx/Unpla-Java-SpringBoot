@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -34,9 +34,16 @@ public class User{
     private boolean isRecyclerActive;
 
 
-    private Date creationDate = new Date();
+    @LastModifiedDate
+    private Long lastModifiedDate;
+
+    @LastModifiedBy
+    private String lastModifiedBy;
+
+    @CreatedDate
+    private Long createdDate;
+
+    @CreatedBy
     private String createdBy;
-    private String lastUpdateBy;
-    private Date lastUpdateDate;
 
 }

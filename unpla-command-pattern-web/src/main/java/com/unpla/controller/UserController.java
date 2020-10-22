@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
@@ -24,23 +23,6 @@ public class UserController {
 
     @Autowired
     private CommandExecutor commandExecutor;
-
-//    @Autowired
-//    private SchedulerHelper schedulerHelper;
-
-//    @Autowired
-//    private Scheduler commandScheduler;
-
-//    @PostMapping(
-//            value = "/api/customers",
-//            produces = MediaType.APPLICATION_JSON_VALUE,
-//            consumes = MediaType.APPLICATION_JSON_VALUE
-//    )
-//    public Mono<Response<CreateCustomerWebResponse>> create(@RequestBody CreateCustomerWebRequest request) {
-//        return commandExecutor.execute(CreateCustomerCommand.class, toCreateCustomerCommandRequest(request))
-//                .map(ResponseHelper::ok)
-//                .subscribeOn(commandScheduler);
-//    }
 
 //    @PostMapping("/login") // dari website content list di kiri
 //    public Mono<UserDetails> login(ServerWebExchange exchange) {

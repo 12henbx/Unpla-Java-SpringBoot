@@ -2,7 +2,7 @@ package com.unpla.entity.document;
 
 import com.unpla.entity.enums.PeriodOfTime;
 import com.unpla.entity.enums.TransactionStatus;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.*;
 
 import java.util.Date;
 
@@ -16,4 +16,16 @@ public class WasteTransaction {
     private WasteItem wasteItem;
     private String userId;
     private String recyclerId;
+
+    @LastModifiedDate
+    private Long lastModifiedDate;
+
+    @LastModifiedBy
+    private String lastModifiedBy;
+
+    @CreatedDate
+    private Long createdDate;
+
+    @CreatedBy
+    private String createdBy;
 }
