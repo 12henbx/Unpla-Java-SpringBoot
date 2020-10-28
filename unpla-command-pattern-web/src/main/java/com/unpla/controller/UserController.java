@@ -6,7 +6,7 @@ import com.blibli.oss.command.CommandExecutor;
 import com.unpla.model.controller.Response;
 import com.unpla.model.controller.UserAddResponse;
 import com.unpla.model.controller.UserLoginResponse;
-import com.unpla.model.service.AddUserToUserRequest;
+import com.unpla.model.service.UserAddRequest;
 import com.unpla.model.service.LoginUserRequest;
 import com.unpla.service.command.AddUserToUserCommand;
 import com.unpla.service.command.UserLoginToUserCommand;
@@ -37,16 +37,18 @@ public class UserController {
 //    }
 
     @PostMapping(value = "/signup", produces = MediaType.APPLICATION_JSON_VALUE) // dari ard333-nya
-    public Mono<Response<UserAddResponse>> signup(@RequestBody AddUserToUserRequest userRequest) {
+    public Mono<Response<UserAddResponse>> signup(@RequestBody UserAddRequest userRequest) {
 
         return commandExecutor.execute(AddUserToUserCommand.class, userRequest)
                 .map(Response::ok)
                 .subscribeOn(Schedulers.elastic());
     }
 
-    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE) // dari ard333-nya
+    @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response<UserLoginResponse>> login(@RequestBody LoginUserRequest loginRequest) {
 //            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+
+//        return ResponseEntity.ok(new AuthResponse(jwtUtil.generateToken(userDetails))); //TODO : cek ini
 
         return commandExecutor.execute(UserLoginToUserCommand.class, loginRequest)
                 .map(Response::ok)

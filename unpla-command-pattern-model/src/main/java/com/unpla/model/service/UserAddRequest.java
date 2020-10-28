@@ -8,7 +8,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @Builder
-public class AddUserToUserRequest implements ServiceRequest {
+public class UserAddRequest implements ServiceRequest {
 
     @NotBlank
     private String username;

@@ -2,10 +2,20 @@ package com.unpla.entity.document;
 
 import com.unpla.entity.enums.PeriodOfTime;
 import com.unpla.entity.enums.TransactionStatus;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Document
 public class WasteTransaction {
     @Id
     private String id;

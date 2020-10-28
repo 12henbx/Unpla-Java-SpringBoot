@@ -5,17 +5,14 @@ import com.unpla.config.security.JWTUtil;
 import com.unpla.config.security.PBKDF2Encoder;
 import com.unpla.entity.document.User;
 import com.unpla.model.controller.UserAddResponse;
-import com.unpla.model.service.AddUserToUserRequest;
+import com.unpla.model.service.UserAddRequest;
 import com.unpla.repository.UserRepository;
 import com.unpla.service.command.AddUserToUserCommand;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 import java.util.Date;
-import java.util.UUID;
 
 @Service
 public class AddUserToUserCommandImpl implements AddUserToUserCommand {
@@ -30,13 +27,13 @@ public class AddUserToUserCommandImpl implements AddUserToUserCommand {
     private PBKDF2Encoder passwordEncoder;
 
     @Override
-    public Mono<UserAddResponse> execute(AddUserToUserRequest request) {
+    public Mono<UserAddResponse> execute(UserAddRequest request) {
         return Mono.fromCallable(() -> convertToUser(request))
                 .flatMap(user -> userRepository.save(user))
                 .map(this::convertToUserResponse);
     }
 
-    private User convertToUser(AddUserToUserRequest req){
+    private User convertToUser(UserAddRequest req){
         User user = User.builder()
                 .fullName(req.getNama())
                 .username(req.getUsername())

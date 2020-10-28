@@ -1,5 +1,6 @@
 package com.unpla.config.security;
 
+import com.unpla.config.security.model.Role;
 import com.unpla.entity.document.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.security.Key;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,36 +30,38 @@ public class JWTUtil {
         this.key = Keys.hmacShaKeyFor(secret.getBytes());
     }
 
-    public Claims getAllClaimsFromToken(String token){
+    public Claims getAllClaimsFromToken(String token) {
         return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
     }
 
-    public String getUsernameFromToken(String token){
+    public String getUsernameFromToken(String token) {
         return getAllClaimsFromToken(token).getSubject();
     }
 
-    public Date getExpirationDateFromToken(String token){
+    public Date getExpirationDateFromToken(String token) {
         return getAllClaimsFromToken(token).getExpiration();
     }
 
-    public Boolean isTokenExpired(String token){
+    private Boolean isTokenExpired(String token) {
         final Date expiration = getExpirationDateFromToken(token);
         return expiration.before(new Date());
     }
 
-    public String generateToken(User user){
-//        Map<String, Object> claims = new HashMap<>();
+    public String generateToken(User user) {
+        Map<String, Object> claims = new HashMap<>();
 //        claims.put("role", user.getRoles());
-        return doGenerateToken(user.getUsername());
+        claims.put("role", Arrays.asList(Role.ROLE_USER)); // TODO: masih manual role-nya
+        return doGenerateToken(claims, user.getUsername());
     }
 
-    private String doGenerateToken(String username) {
-        Long expirationTimeLong = Long.parseLong(expirationTime);
+    private String doGenerateToken(Map<String, Object> claims, String username) {
+        Long expirationTimeLong = Long.parseLong(expirationTime); //in second
 
         final Date createdDate = new Date();
         final Date expirationDate = new Date(createdDate.getTime() + expirationTimeLong * 1000);
 
         return Jwts.builder()
+                .setClaims(claims)
                 .setSubject(username)
                 .setIssuedAt(createdDate)
                 .setExpiration(expirationDate)
@@ -65,7 +69,7 @@ public class JWTUtil {
                 .compact();
     }
 
-    public Boolean validateToken(String token){
+    public Boolean validateToken(String token) {
         return !isTokenExpired(token);
     }
 }

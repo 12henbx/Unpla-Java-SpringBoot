@@ -35,6 +35,9 @@ public class UserLoginToUserCommandImpl implements UserLoginToUserCommand {
 //        return Mono.fromCallable(() -> convertToUser(request))
 //                .flatMap(user -> userRepository.save(user))
 //                .map(this::convertToUserResponse);
+
+//        return ResponseEntity.ok(new AuthResponse(jwtUtil.generateToken(userDetails)));
+
         return userRepository.findByUsername(request.getUsername())
                 .map(userOne -> {
                     if (passwordEncoder.matches(request.getPassword(), userOne.getPassword())){

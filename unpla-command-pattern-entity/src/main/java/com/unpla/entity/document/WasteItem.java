@@ -1,5 +1,6 @@
 package com.unpla.entity.document;
 
+import com.unpla.entity.enums.Magnitude;
 import com.unpla.entity.enums.MainWasteCategory;
 import com.unpla.entity.enums.SubWasteCategory;
 import lombok.AllArgsConstructor;
@@ -23,8 +24,10 @@ public class WasteItem {
     private List<String> photo;
     private MainWasteCategory mainWasteCategory;
     private SubWasteCategory subWasteCategory;
-    private float kilogramWeight;
+    private Magnitude magnitude;
+    private float weightValue;
     private String userId;
+    private Boolean isDelete;
 
     @LastModifiedDate
     private Long lastModifiedDate;
