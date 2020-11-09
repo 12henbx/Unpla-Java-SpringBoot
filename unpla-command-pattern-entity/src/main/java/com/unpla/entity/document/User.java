@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class User{
+public class User extends BaseClass {
     @Id
     private String id;
     private String fullName;
@@ -34,16 +34,16 @@ public class User{
     private boolean isRecyclerActive;
 
 
-    @LastModifiedDate
-    private Long lastModifiedDate;
-
-    @LastModifiedBy
-    private String lastModifiedBy;
-
-    @CreatedDate
-    private Long createdDate;
-
-    @CreatedBy
-    private String createdBy;
+//    @LastModifiedDate
+//    private Long lastModifiedDate;
+//
+//    @LastModifiedBy
+//    private String lastModifiedBy;
+//
+//    @CreatedDate
+//    private Long createdDate;
+//
+//    @CreatedBy
+//    private String createdBy;
 
 }

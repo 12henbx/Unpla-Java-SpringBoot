@@ -21,9 +21,18 @@ public class WasteItemController {
     @Autowired
     private CommandExecutor commandExecutor;
 
-    @Operation(summary = "My endpoint", security = @SecurityRequirement(name = "basicAuth"))
+    @Operation(summary = "Add Waste Item", security = @SecurityRequirement(name = "basicAuth"))
     @PostMapping(value = "/add-waste-item", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<Response<WasteAddToWasteItemResponse>> login(@RequestBody WasteAddToWasteItemRequest wasteItemRequest) {
+    public Mono<Response<WasteAddToWasteItemResponse>> addWasteItem(@RequestBody WasteAddToWasteItemRequest wasteItemRequest) {
+
+        return commandExecutor.execute(AddWasteToWasteItemCommand.class, wasteItemRequest)
+                .map(Response::ok)
+                .subscribeOn(Schedulers.elastic());
+    }
+
+    @Operation(summary = "Add Waste Item", security = @SecurityRequirement(name = "basicAuth"))
+    @PostMapping(value = "/add-waste-item", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<Response<WasteAddToWasteItemResponse>> updateWasteItem(@RequestBody WasteAddToWasteItemRequest wasteItemRequest) {
 
         return commandExecutor.execute(AddWasteToWasteItemCommand.class, wasteItemRequest)
                 .map(Response::ok)

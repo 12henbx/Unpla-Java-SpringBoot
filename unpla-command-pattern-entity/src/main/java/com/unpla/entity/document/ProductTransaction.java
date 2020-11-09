@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class ProductTransaction {
+public class ProductTransaction extends BaseClass {
     @Id
     private String id;
     private String idRecyclerSeller;
@@ -31,15 +31,15 @@ public class ProductTransaction {
 
     private PaymentMethod paymentMethodEnum;
 
-    @LastModifiedDate
-    private Long lastModifiedDate;
-
-    @LastModifiedBy
-    private String lastModifiedBy;
-
-    @CreatedDate
-    private Long createdDate;
-
-    @CreatedBy
-    private String createdBy;
+//    @LastModifiedDate
+//    private Long lastModifiedDate;
+//
+//    @LastModifiedBy
+//    private String lastModifiedBy;
+//
+//    @CreatedDate
+//    private Long createdDate;
+//
+//    @CreatedBy
+//    private String createdBy;
 }

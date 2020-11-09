@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class Recycler {
+public class Recycler extends BaseClass {
     @Id
     private String id;
     private String profilePhoto;
@@ -31,15 +31,15 @@ public class Recycler {
     private List<MainWasteCategory> mainWasteCategories;
     private List<SubWasteCategory> subWasteCategories;
 
-    @LastModifiedDate
-    private Long lastModifiedDate;
-
-    @LastModifiedBy
-    private String lastModifiedBy;
-
-    @CreatedDate
-    private Long createdDate;
-
-    @CreatedBy
-    private String createdBy;
+//    @LastModifiedDate
+//    private Long lastModifiedDate;
+//
+//    @LastModifiedBy
+//    private String lastModifiedBy;
+//
+//    @CreatedDate
+//    private Long createdDate;
+//
+//    @CreatedBy
+//    private String createdBy;
 }
