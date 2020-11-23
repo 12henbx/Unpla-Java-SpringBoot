@@ -15,20 +15,23 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class Cart extends BaseClass{
+public class Cart {
     @Id
     private String id;
+
     private List<CartItem> cartItemList;
 
-//    @LastModifiedDate
-//    private Long lastModifiedDate;
-//
-//    @LastModifiedBy
-//    private String lastModifiedBy;
-//
-//    @CreatedDate
-//    private Long createdDate;
-//
-//    @CreatedBy
-//    private String createdBy;
+    private boolean isDelete;
+
+    @LastModifiedDate
+    private Long lastModifiedDate;
+
+    @LastModifiedBy
+    private String lastModifiedBy;
+
+    @CreatedDate
+    private Long createdDate;
+
+    @CreatedBy
+    private String createdBy;
 }

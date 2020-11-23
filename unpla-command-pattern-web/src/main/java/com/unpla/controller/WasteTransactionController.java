@@ -13,17 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
-//@RestController
+@RestController
 public class WasteTransactionController {
 
-//    @Autowired
-//    private CommandExecutor commandExecutor;
-//
-//    @PostMapping(value = "/add-waste-item/submit", produces = MediaType.APPLICATION_JSON_VALUE)
-//    public Mono<Response<WasteAddToTransactionResponse>> login(@RequestBody WasteAddToTransactionRequest transactionRequest) {
-//
-//        return commandExecutor.execute(AddWasteToTransactionCommand.class, transactionRequest)
-//                .map(Response::ok)
-//                .subscribeOn(Schedulers.elastic());
-//    }
+    @Autowired
+    private CommandExecutor commandExecutor;
+
+    @PostMapping(value = "/add-waste-item/submit", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<Response<WasteAddToTransactionResponse>> addWasteTransaction(@RequestBody WasteAddToTransactionRequest transactionRequest) {
+
+        return commandExecutor.execute(AddWasteToTransactionCommand.class, transactionRequest)
+                .map(Response::ok)
+                .subscribeOn(Schedulers.elastic());
+    }
 }

@@ -16,27 +16,37 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class RecycledProduct extends BaseClass {
+public class RecycledProduct {
     @Id
     private String id;
+
     private List<String> productImages;
+
     private String name;
+
     private long price;
+
     private int quantity;
+
     private float totalRating;
+
     private List<Review> reviews;
+
     private long purchasedTimes;
+
     private String recyclerId;
 
-//    @LastModifiedDate
-//    private Long lastModifiedDate;
-//
-//    @LastModifiedBy
-//    private String lastModifiedBy;
-//
-//    @CreatedDate
-//    private Long createdDate;
-//
-//    @CreatedBy
-//    private String createdBy;
+    private boolean isDelete;
+
+    @LastModifiedDate
+    private Long lastModifiedDate;
+
+    @LastModifiedBy
+    private String lastModifiedBy;
+
+    @CreatedDate
+    private Long createdDate;
+
+    @CreatedBy
+    private String createdBy;
 }

@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class WasteItem extends BaseClass {
+public class WasteItem {
     @Id
     private String id;
     private List<String> photo;
@@ -29,15 +29,15 @@ public class WasteItem extends BaseClass {
     private String userId;
     private Boolean isDelete;
 
-//    @LastModifiedDate
-//    private Long lastModifiedDate;
-//
-//    @LastModifiedBy
-//    private String lastModifiedBy;
-//
-//    @CreatedDate
-//    private Long createdDate;
-//
-//    @CreatedBy
-//    private String createdBy;
+    @LastModifiedDate
+    private Long lastModifiedDate;
+
+    @LastModifiedBy
+    private String lastModifiedBy;
+
+    @CreatedDate
+    private Long createdDate;
+
+    @CreatedBy
+    private String createdBy;
 }

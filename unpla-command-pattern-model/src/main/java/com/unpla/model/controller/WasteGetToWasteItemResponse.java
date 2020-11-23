@@ -1,5 +1,7 @@
 package com.unpla.model.controller;
 
+
+import com.unpla.entity.document.WasteItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WasteAddToTransactionResponse {
-    private boolean isSuccess;
+public class WasteGetToWasteItemResponse {
+    WasteItem wasteItem;
 }

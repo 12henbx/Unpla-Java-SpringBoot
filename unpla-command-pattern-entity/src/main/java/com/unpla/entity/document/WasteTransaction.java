@@ -16,26 +16,26 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class WasteTransaction extends BaseClass {
+public class WasteTransaction {
     @Id
     private String id;
     private Date pickUpDate;
     private PeriodOfTime pickUpPeriod;
     private long totalPrice;
     private TransactionStatus status;
-    private WasteItem wasteItem;
+    private String wasteItemId;
     private String userId;
     private String recyclerId;
 
-//    @LastModifiedDate
-//    private Long lastModifiedDate;
-//
-//    @LastModifiedBy
-//    private String lastModifiedBy;
-//
-//    @CreatedDate
-//    private Long createdDate;
-//
-//    @CreatedBy
-//    private String createdBy;
+    @LastModifiedDate
+    private Long lastModifiedDate;
+
+    @LastModifiedBy
+    private String lastModifiedBy;
+
+    @CreatedDate
+    private Long createdDate;
+
+    @CreatedBy
+    private String createdBy;
 }

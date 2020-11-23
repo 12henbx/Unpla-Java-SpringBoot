@@ -1,6 +1,7 @@
 package com.unpla.entity.document;
 
-import com.unpla.entity.embedded.Coordinate;
+import com.unpla.entity.enums.NotificationGroup;
+import com.unpla.entity.enums.NotificationType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,30 +9,26 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
-import java.util.List;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class User {
+public class Notification {
     @Id
     private String id;
-    private String fullName;
-    private String email;
-    private String username;
-    private String password;
-    private String profilePic;
-    private String phone;
-    private int balance;
-    private int point;
-    private String Address;
-    private Coordinate coordinate;
-    private String recyclerId;
-    private List<String> cartId;
-    private boolean isRecyclerActive;
+
+    private String idSender;
+
+    private String idReceiver;
+
+    private NotificationGroup norificationGroup; // pembeli sampah, penjual sampah, pembeli barang, penjual barang
+
+    private NotificationType notificationType; // pesanan_baru, diproses, dikirim, sampai
+
+    private String content;
+
+    private boolean isRead;
 
     private boolean isDelete;
 
@@ -46,5 +43,4 @@ public class User {
 
     @CreatedBy
     private String createdBy;
-
 }
