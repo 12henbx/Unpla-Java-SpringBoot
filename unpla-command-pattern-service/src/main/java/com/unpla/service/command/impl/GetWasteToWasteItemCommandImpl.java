@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
-public class GetWasteToWasteItemCommandImpl implements GetWasteToWasteItemCommand {
+public class GetWasteToWasteItemCommandImpl implements GetWasteToWasteItemCommand { // TODO : Lanjutin dari sini, jika get waste item dari user id
 
     @Autowired
     private WasteItemRepository wasteItemRepository;

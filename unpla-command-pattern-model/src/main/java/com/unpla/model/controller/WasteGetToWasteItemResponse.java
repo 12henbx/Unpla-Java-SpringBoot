@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WasteGetToWasteItemResponse {
-    WasteItem wasteItem;
+    private WasteItem wasteItem;
 }

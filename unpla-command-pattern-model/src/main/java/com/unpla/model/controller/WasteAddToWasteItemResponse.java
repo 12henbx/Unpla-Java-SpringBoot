@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WasteAddToWasteItemResponse {
-    Boolean isSuccess;
+    private Boolean isSuccess;
 }
