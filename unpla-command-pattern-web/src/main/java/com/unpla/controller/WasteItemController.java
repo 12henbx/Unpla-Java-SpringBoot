@@ -5,19 +5,21 @@ import com.unpla.model.controller.Response;
 import com.unpla.model.controller.WasteAddToWasteItemResponse;
 import com.unpla.model.controller.WasteGetToWasteItemResponse;
 import com.unpla.model.service.WasteAddToWasteItemRequest;
+import com.unpla.model.service.WasteGetListByUsernameRequest;
 import com.unpla.model.service.WasteGetToWasteItemRequest;
 import com.unpla.repository.WasteItemRepository;
 import com.unpla.service.command.AddWasteToWasteItemCommand;
+import com.unpla.service.command.GetWasteListByUsernameCommand;
 import com.unpla.service.command.GetWasteToWasteItemCommand;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
+
+import java.util.List;
 
 @RestController
 public class WasteItemController {
@@ -25,8 +27,6 @@ public class WasteItemController {
     @Autowired
     private CommandExecutor commandExecutor;
 
-    @Autowired
-    private WasteItemRepository wasteItemRepository;
 
     @Operation(summary = "Add Waste Item", security = @SecurityRequirement(name = "basicAuth"))
     @PostMapping(value = "/add-waste-item", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -42,7 +42,7 @@ public class WasteItemController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Mono<Response<WasteGetToWasteItemResponse>> getbyWasteItemId(@PathVariable("username") String username,
-                                                                        @PathVariable("wasteItemId") String wasteItemId) { // TODO : get waste by wasteitemid sama userid
+                                                                        @PathVariable("wasteItemId") String wasteItemId) {
         return commandExecutor.execute(GetWasteToWasteItemCommand.class, toGetWasteItemCommandRequest(username, wasteItemId))
                 .map(Response::ok)
                 .subscribeOn(Schedulers.elastic());
@@ -59,14 +59,14 @@ public class WasteItemController {
             value = "/waste-item/{username}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Flux<Response<WasteGetToWasteItemResponse>> getListbyUsername(@PathVariable("username") String username) { // TODO : get waste by wasteitemid sama userid
-        return commandExecutor.execute(GetWasteToWasteItemCommand.class, toGetWasteItemCommandRequest(username))
-                .map(Response::ok)
-                .subscribeOn(Schedulers.elastic());
-    }
+    public Mono<Response<List<WasteGetToWasteItemResponse>>>
+    getListbyUsername(@PathVariable("username") String userId,
+                      @RequestBody WasteGetListByUsernameRequest req,
+                      @RequestParam(name = "page") int page,
+                      @RequestParam(name = "size") int size) { // TODO : get waste by wasteitemid sama userid
 
-    private WasteGetToWasteItemRequest toGetWasteItemCommandRequest(String username){
-        return wasteItemRepository.findById(username.getId())
-                .map(this::toWebResponse);
+        return commandExecutor.execute(GetWasteListByUsernameCommand.class, req)
+                .map(response -> Response.ok(response.getListWasteItem()))
+                .subscribeOn(Schedulers.elastic());
     }
 }

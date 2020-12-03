@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class WasteAddToWasteItemRequest {
+public class WasteAddToWasteItemRequest implements ServiceRequest {
     private List<String> photo;
 
     private MainWasteCategory mainWasteCategory;
@@ -26,9 +26,13 @@ public class WasteAddToWasteItemRequest {
 
     // TODO : punya waste transaction
     private Date pickUpDate;
+
     private PeriodOfTime pickUpPeriod;
+
     private long totalPrice;
+
     private TransactionStatus status;
+
 //    private WasteItem wasteItem;
     private String recyclerId;
 }

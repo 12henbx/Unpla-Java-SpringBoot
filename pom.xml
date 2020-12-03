@@ -43,6 +43,22 @@
 <!--            <artifactId>spring-boot-starter-tomcat</artifactId>-->
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
+<!--        <dependency> ini bener-->
+<!--            <groupId>com.blibli.oss</groupId>-->
+<!--            <artifactId>blibli-backend-framework-common</artifactId>-->
+<!--            <version>0.0.7</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.blibli.oss</groupId>-->
+<!--            <artifactId>blibli-backend-framework-command</artifactId>-->
+<!--            <version>0.0.7</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.blibli.oss.helpers</groupId>-->
+<!--            <artifactId>java-common-helper</artifactId>-->
+<!--            <version>0.0.11</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>

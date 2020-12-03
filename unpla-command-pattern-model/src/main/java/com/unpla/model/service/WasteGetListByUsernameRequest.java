@@ -11,10 +11,13 @@ import javax.validation.constraints.NotBlank;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WasteGetToWasteItemRequest implements ServiceRequest {
+public class WasteGetListByUsernameRequest implements ServiceRequest {
     @NotBlank
-    private String wasteItemId;
+    private String userId;
 
     @NotBlank
-    private String username;
+    private int page;
+
+    @NotBlank
+    private int size;
 }
