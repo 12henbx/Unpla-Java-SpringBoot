@@ -18,13 +18,17 @@ import java.util.List;
 
 @Service
 public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsernameCommand {
+
     @Autowired
     private WasteItemRepository wasteItemRepository;
 
-
     @Override
     public Mono<WasteGetListByUsernameResponse> execute(WasteGetListByUsernameRequest req) {
-        return Mono.fromCallable(() -> wasteItemRepository.findWasteItemsByUserId(req.getUserId(), PageRequest.of(req.getPage(), req.getSize())))
+        System.out.println(req.toString() + "    bloo    ");
+//        return Mono.fromCallable(() -> wasteItemRepository.findWasteItemsByUserId(req.getUserId(), PageRequest.of(req.getPage(), req.getSize())))
+//                .map(this::toWebResponse)
+//                .flatMap(this::fillTotal);
+        return Mono.fromCallable(() -> wasteItemRepository.findAll())
                 .map(this::toWebResponse)
                 .flatMap(this::fillTotal);
     }

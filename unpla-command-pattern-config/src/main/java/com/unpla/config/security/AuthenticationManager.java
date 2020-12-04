@@ -31,7 +31,7 @@ public class AuthenticationManager implements ReactiveAuthenticationManager {
 //            List<String> rolesMap = claims.get("role", List.class); //TODO : changed because of an error
 //            System.out.println(claims.get("role") + "    Test 0");
             List<String> rolesMap = (List<String>) claims.get("role");
-            System.out.println(rolesMap+"       TEST 1");
+//            System.out.println(rolesMap+"       TEST 1");
             List<GrantedAuthority> authorities = new ArrayList<>();
             for (String rolemap : rolesMap) {
                 authorities.add(new SimpleGrantedAuthority(rolemap));

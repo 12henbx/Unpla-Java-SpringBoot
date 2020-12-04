@@ -47,7 +47,7 @@ public class UserController {
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response<UserLoginResponse>> login(@RequestBody LoginUserRequest loginRequest) {
 //            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-
+        System.out.println(" blpp   ");
 //        return ResponseEntity.ok(new AuthResponse(jwtUtil.generateToken(userDetails))); //TODO : cek ini
 
         return commandExecutor.execute(UserLoginToUserCommand.class, loginRequest)

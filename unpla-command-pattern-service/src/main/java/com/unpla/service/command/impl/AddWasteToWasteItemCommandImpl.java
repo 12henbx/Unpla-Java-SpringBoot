@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
-public class AddWasteToWasteItemCommandImpl implements AddWasteToWasteItemCommand {
+public class AddWasteToWasteItemCommandImpl implements AddWasteToWasteItemCommand {  // TODO: masuk datanya malah ke wasteTransaction
 
     @Autowired
     private WasteItemRepository wasteItemRepository;
@@ -24,11 +24,8 @@ public class AddWasteToWasteItemCommandImpl implements AddWasteToWasteItemComman
     @Override
     public Mono<WasteAddToWasteItemResponse> execute(WasteAddToWasteItemRequest request) {
 
-        Mono.fromCallable(() -> convertToWasteItem(request))
-                .map(wasteItem -> wasteItemRepository.save(wasteItem));
-        return Mono
-                .fromCallable(() -> convertToWasteTransaction(request))
-                .flatMap(wasteTransaction -> wasteTransactionRepository.save(wasteTransaction))
+        return Mono.fromCallable(() -> convertToWasteItem(request))
+                .flatMap(wasteItem -> wasteItemRepository.save(wasteItem))
                 .map(this::convertToWasteAddResponse);
     }
 
@@ -44,7 +41,7 @@ public class AddWasteToWasteItemCommandImpl implements AddWasteToWasteItemComman
         return wasteItem;
     }
 
-    private WasteAddToWasteItemResponse convertToWasteAddResponse(WasteTransaction wasteTransaction){
+    private WasteAddToWasteItemResponse convertToWasteAddResponse(WasteItem wasteItem){
         WasteAddToWasteItemResponse wasteAddResponse = WasteAddToWasteItemResponse.builder()
                 .isSuccess(Boolean.TRUE)
                 .build();

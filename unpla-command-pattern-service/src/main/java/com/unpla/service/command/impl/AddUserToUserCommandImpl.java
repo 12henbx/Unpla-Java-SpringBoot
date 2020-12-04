@@ -1,6 +1,7 @@
 package com.unpla.service.command.impl;
 
 //import com.unpla.config.security.JWTUtil;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.unpla.config.security.JWTUtil;
 import com.unpla.config.security.PBKDF2Encoder;
 import com.unpla.entity.document.User;
@@ -39,6 +40,8 @@ public class AddUserToUserCommandImpl implements AddUserToUserCommand {
                 .username(req.getUsername())
                 .password(passwordEncoder.encode(req.getPassword()))
                 .email(req.getEmail())
+                .isDelete(Boolean.FALSE)
+                .isRecyclerActive(Boolean.FALSE)
                 .lastModifiedDate(new Date().getTime())
                 .lastModifiedBy(req.getUsername())
                 .createdDate(new Date().getTime())

@@ -18,6 +18,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
+import sun.rmi.runtime.Log;
 
 import java.util.List;
 
@@ -27,8 +28,6 @@ public class WasteItemController {
     @Autowired
     private CommandExecutor commandExecutor;
 
-
-    @Operation(summary = "Add Waste Item", security = @SecurityRequirement(name = "basicAuth"))
     @PostMapping(value = "/add-waste-item", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response<WasteAddToWasteItemResponse>> addWasteItem(@RequestBody WasteAddToWasteItemRequest wasteItemRequest) {
 
@@ -63,10 +62,14 @@ public class WasteItemController {
     getListbyUsername(@PathVariable("username") String userId,
                       @RequestBody WasteGetListByUsernameRequest req,
                       @RequestParam(name = "page") int page,
-                      @RequestParam(name = "size") int size) { // TODO : get waste by wasteitemid sama userid
-
+                      @RequestParam(name = "size") int size
+                       ) { // TODO : get waste by wasteitemid sama userid. Get userID ato username? Trus ini mungkin IDnya unsuppoerted media type object to string
+        System.out.println(commandExecutor.execute(GetWasteListByUsernameCommand.class, req) + "    BLUUU   ");
         return commandExecutor.execute(GetWasteListByUsernameCommand.class, req)
-                .map(response -> Response.ok(response.getListWasteItem()))
+                .map(response -> {
+                    System.out.println(response.getListWasteItem() + "          BLA     ");
+                    return Response.ok(response.getListWasteItem());
+                })
                 .subscribeOn(Schedulers.elastic());
     }
 }
