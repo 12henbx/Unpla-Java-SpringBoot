@@ -34,6 +34,7 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
     }
 
     private WasteGetListByUsernameResponse toWebResponse(Flux<WasteItem> wasteList) {
+        System.out.println(wasteList + "    bloo1    ");
         List<WasteGetToWasteItemResponse> response = new ArrayList<>();
         BeanUtils.copyProperties(wasteList, response);
         return WasteGetListByUsernameResponse.builder()
@@ -42,6 +43,7 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
     }
 
     private Mono<WasteGetListByUsernameResponse> fillTotal(WasteGetListByUsernameResponse response) {
+        System.out.println(response + "    bloo2    ");
         return wasteItemRepository.count()
                 .map(aLong -> {
                     response.setTotal(aLong);

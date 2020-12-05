@@ -58,8 +58,7 @@ public class WasteItemController {
             value = "/waste-item/{username}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<List<WasteGetToWasteItemResponse>>>
-    getListbyUsername(@PathVariable("username") String userId,
+    public Mono<Response<List<WasteGetToWasteItemResponse>>> getListbyUsername(@PathVariable("username") String userId,
                       @RequestBody WasteGetListByUsernameRequest req,
                       @RequestParam(name = "page") int page,
                       @RequestParam(name = "size") int size
@@ -68,7 +67,7 @@ public class WasteItemController {
         return commandExecutor.execute(GetWasteListByUsernameCommand.class, req)
                 .map(response -> {
                     System.out.println(response.getListWasteItem() + "          BLA     ");
-                    return Response.ok(response.getListWasteItem());
+                    return Response.ok(response);
                 })
                 .subscribeOn(Schedulers.elastic());
     }

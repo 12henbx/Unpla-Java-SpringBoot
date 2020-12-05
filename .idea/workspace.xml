@@ -3,22 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/AuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/AuthenticationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/OpenA.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/src/main/java/com/unpla/config/security/OpenA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/security/AuthenticationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-config/target/classes/com/unpla/config/security/AuthenticationManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddUserToUserCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddUserToUserCommandImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddWasteToTransactionCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddWasteToTransactionCommandImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddWasteToWasteItemCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddWasteToWasteItemCommandImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddUserToUserCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddUserToUserCommandImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddWasteToTransactionCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddWasteToTransactionCommandImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddWasteToWasteItemCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddWasteToWasteItemCommandImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteItemController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -172,7 +159,7 @@
       <workItem from="1606959786092" duration="773000" />
       <workItem from="1606961372407" duration="2531000" />
       <workItem from="1606964851956" duration="25784000" />
-      <workItem from="1607061893385" duration="9822000" />
+      <workItem from="1607061893385" duration="13836000" />
     </task>
     <servers />
   </component>
