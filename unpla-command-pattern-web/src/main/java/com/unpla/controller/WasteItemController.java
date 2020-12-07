@@ -11,6 +11,7 @@ import com.unpla.repository.WasteItemRepository;
 import com.unpla.service.command.AddWasteToWasteItemCommand;
 import com.unpla.service.command.GetWasteListByUsernameCommand;
 import com.unpla.service.command.GetWasteToWasteItemCommand;
+import com.unpla.support.PageSupport;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,17 +59,18 @@ public class WasteItemController {
             value = "/waste-item/{username}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<List<WasteGetToWasteItemResponse>>> getListbyUsername(@PathVariable("username") String userId,
-                      @RequestBody WasteGetListByUsernameRequest req,
-                      @RequestParam(name = "page") int page,
-                      @RequestParam(name = "size") int size
+    public Mono<PageSupport<WasteGetToWasteItemResponse>> getListbyUsername(@PathVariable("username") String userId,
+                                                                                  @RequestBody WasteGetListByUsernameRequest req,
+                                                                                  @RequestParam(name = "page") int page,
+                                                                                  @RequestParam(name = "size") int size
                        ) { // TODO : get waste by wasteitemid sama userid. Get userID ato username? Trus ini mungkin IDnya unsuppoerted media type object to string
-        System.out.println(commandExecutor.execute(GetWasteListByUsernameCommand.class, req) + "    BLUUU   ");
-        return commandExecutor.execute(GetWasteListByUsernameCommand.class, req)
-                .map(response -> {
-                    System.out.println(response.getListWasteItem() + "          BLA     ");
-                    return Response.ok(response);
-                })
-                .subscribeOn(Schedulers.elastic());
+        return commandExecutor.execute(GetWasteListByUsernameCommand.class, req);
+//        System.out.println(commandExecutor.execute(GetWasteListByUsernameCommand.class, req) + "    BLUUU   ");
+//        return commandExecutor.execute(GetWasteListByUsernameCommand.class, req)
+//                .map(response -> {
+//                    System.out.println(response.getListWasteItem() + "          BLA     ");
+//                    return Response.ok(response);
+//                })
+//                .subscribeOn(Schedulers.elastic());
     }
 }

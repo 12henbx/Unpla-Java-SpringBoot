@@ -27,6 +27,11 @@
             <artifactId>unpla-command-pattern-config</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.unpla</groupId>
+            <artifactId>unpla-command-pattern-web</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 
 

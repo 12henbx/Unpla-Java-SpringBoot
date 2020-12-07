@@ -6,6 +6,7 @@ import com.unpla.model.controller.WasteGetToWasteItemResponse;
 import com.unpla.model.service.WasteGetListByUsernameRequest;
 import com.unpla.repository.WasteItemRepository;
 import com.unpla.service.command.GetWasteListByUsernameCommand;
+import com.unpla.support.PageSupport;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -15,6 +16,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsernameCommand {
@@ -23,14 +25,25 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
     private WasteItemRepository wasteItemRepository;
 
     @Override
-    public Mono<WasteGetListByUsernameResponse> execute(WasteGetListByUsernameRequest req) {
+    public Mono<PageSupport<WasteGetListByUsernameResponse>> execute(WasteGetListByUsernameRequest req) {
         System.out.println(req.toString() + "    bloo    ");
 //        return Mono.fromCallable(() -> wasteItemRepository.findWasteItemsByUserId(req.getUserId(), PageRequest.of(req.getPage(), req.getSize())))
 //                .map(this::toWebResponse)
 //                .flatMap(this::fillTotal);
-        return Mono.fromCallable(() -> wasteItemRepository.findAll())
-                .map(this::toWebResponse)
-                .flatMap(this::fillTotal);
+
+//        return Mono.fromCallable(() -> wasteItemRepository.findAll())
+//                .map(this::toWebResponse)
+//                .flatMap(this::fillTotal);
+
+        return wasteItemRepository.findAll()
+                .collectList()
+                .map(list -> new PageSupport<>(
+                        list
+                                .stream()
+                                .skip(req.getPage() * req.getSize())
+                                .limit(req.getSize())
+                                .collect(Collectors.toList()),
+                        req.getPage(), req.getSize(), list.size()));
     }
 
     private WasteGetListByUsernameResponse toWebResponse(Flux<WasteItem> wasteList) {
