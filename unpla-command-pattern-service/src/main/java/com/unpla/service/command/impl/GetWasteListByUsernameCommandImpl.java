@@ -25,28 +25,29 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
     private WasteItemRepository wasteItemRepository;
 
     @Override
-    public Mono<PageSupport<WasteGetListByUsernameResponse>> execute(WasteGetListByUsernameRequest req) {
+    public Mono<WasteGetListByUsernameResponse> execute(WasteGetListByUsernameRequest req) {
         System.out.println(req.toString() + "    bloo    ");
-//        return Mono.fromCallable(() -> wasteItemRepository.findWasteItemsByUserId(req.getUserId(), PageRequest.of(req.getPage(), req.getSize())))
-//                .map(this::toWebResponse)
-//                .flatMap(this::fillTotal);
+        return wasteItemRepository.findWasteItemsByUserId(req.getUserId(), PageRequest.of(req.getPage(), req.getSize()))
+                .collectList()
+                .map(this::toWebResponse)
+                .flatMap(this::fillTotal);
 
 //        return Mono.fromCallable(() -> wasteItemRepository.findAll())
 //                .map(this::toWebResponse)
 //                .flatMap(this::fillTotal);
 
-        return wasteItemRepository.findAll()
-                .collectList()
-                .map(list -> new PageSupport<>(
-                        list
-                                .stream()
-                                .skip(req.getPage() * req.getSize())
-                                .limit(req.getSize())
-                                .collect(Collectors.toList()),
-                        req.getPage(), req.getSize(), list.size()));
+//        return wasteItemRepository.findAll()
+//                .collectList()
+//                .map(list -> new PageSupport<>(
+//                        list
+//                                .stream()
+//                                .skip(req.getPage() * req.getSize())
+//                                .limit(req.getSize())
+//                                .collect(Collectors.toList()),
+//                        req.getPage(), req.getSize(), list.size()));
     }
 
-    private WasteGetListByUsernameResponse toWebResponse(Flux<WasteItem> wasteList) {
+    private WasteGetListByUsernameResponse toWebResponse(List<WasteItem> wasteList) {
         System.out.println(wasteList + "    bloo1    ");
         List<WasteGetToWasteItemResponse> response = new ArrayList<>();
         BeanUtils.copyProperties(wasteList, response);
