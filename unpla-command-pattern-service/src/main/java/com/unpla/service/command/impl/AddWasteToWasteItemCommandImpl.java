@@ -42,9 +42,8 @@ public class AddWasteToWasteItemCommandImpl implements AddWasteToWasteItemComman
     }
 
     private WasteAddToWasteItemResponse convertToWasteAddResponse(WasteItem wasteItem){
-        WasteAddToWasteItemResponse wasteAddResponse = WasteAddToWasteItemResponse.builder()
+        return WasteAddToWasteItemResponse.builder()
                 .isSuccess(Boolean.TRUE)
                 .build();
-        return wasteAddResponse;
     }
 }

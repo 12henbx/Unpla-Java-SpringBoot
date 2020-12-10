@@ -16,7 +16,9 @@ import com.unpla.support.PageSupport;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
@@ -60,18 +62,25 @@ public class WasteItemController {
             value = "/waste-item/{username}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<WasteGetListByUsernameResponse>> getListbyUsername(@PathVariable("username") String userId,
-                                                                            @RequestBody WasteGetListByUsernameRequest req,
+    public Mono<Response<WasteGetListByUsernameResponse>> getListbyUsername(//@RequestBody WasteGetListByUsernameRequest req,
+                                                                            @PathVariable("username") String username,
                                                                             @RequestParam(name = "page") int page,
                                                                             @RequestParam(name = "size") int size
                        ) { // TODO : get waste by wasteitemid sama userid. Get userID ato username? Trus ini mungkin IDnya unsuppoerted media type object to string
-//        return commandExecutor.execute(GetWasteListByUsernameCommand.class, req)
 //        System.out.println(commandExecutor.execute(GetWasteListByUsernameCommand.class, req) + "    BLUUU   ");
-        return commandExecutor.execute(GetWasteListByUsernameCommand.class, req)
+        return commandExecutor.execute(GetWasteListByUsernameCommand.class, toGetListWasteItem(username, page, size))
                 .map(response -> {
                     System.out.println(response.getListWasteItem() + "          BLA     ");
-                    return Response.ok(response);
+                    return Response.status(HttpStatus.OK, response);
                 })
                 .subscribeOn(Schedulers.elastic());
+    }
+
+    private WasteGetListByUsernameRequest toGetListWasteItem(String username, int page, int size){
+        WasteGetListByUsernameRequest commandReq = new WasteGetListByUsernameRequest();
+        commandReq.setUserId(username);
+        commandReq.setPage(page);
+        commandReq.setSize(size);
+        return commandReq;
     }
 }

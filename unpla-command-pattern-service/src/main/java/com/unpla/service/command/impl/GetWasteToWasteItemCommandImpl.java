@@ -19,7 +19,6 @@ public class GetWasteToWasteItemCommandImpl implements GetWasteToWasteItemComman
 
     @Override
     public Mono<WasteGetToWasteItemResponse> execute(WasteGetToWasteItemRequest request) {
-        System.out.println(wasteItemRepository.findWasteItemsByUserId(request.getUsername(), PageRequest.of(1, 10)) + "   darlinggg  ");
         return wasteItemRepository.findById(request.getWasteItemId())
                 .map(this::toWebResponse);
     }

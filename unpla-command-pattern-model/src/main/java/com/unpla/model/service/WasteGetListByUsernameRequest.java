@@ -15,9 +15,9 @@ public class WasteGetListByUsernameRequest implements ServiceRequest {
     @NotBlank
     private String userId;
 
-    @NotBlank
+//    @NotBlank
     private int page;
 
-    @NotBlank
+//    @NotBlank
     private int size;
 }

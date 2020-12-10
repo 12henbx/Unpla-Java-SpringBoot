@@ -1,16 +1,17 @@
 package com.unpla.service.command.impl;
 
+import com.mongodb.MongoWriteException;
 import com.unpla.entity.document.WasteItem;
 import com.unpla.model.controller.WasteGetListByUsernameResponse;
 import com.unpla.model.controller.WasteGetToWasteItemResponse;
 import com.unpla.model.service.WasteGetListByUsernameRequest;
 import com.unpla.repository.WasteItemRepository;
 import com.unpla.service.command.GetWasteListByUsernameCommand;
-import com.unpla.support.PageSupport;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -26,38 +27,27 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
 
     @Override
     public Mono<WasteGetListByUsernameResponse> execute(WasteGetListByUsernameRequest req) {
-        System.out.println(req.toString() + "    bloo    ");
+
         return wasteItemRepository.findWasteItemsByUserId(req.getUserId(), PageRequest.of(req.getPage(), req.getSize()))
+                .map(this::toGetCustomerWebResponse)
                 .collectList()
                 .map(this::toWebResponse)
                 .flatMap(this::fillTotal);
-
-//        return Mono.fromCallable(() -> wasteItemRepository.findAll())
-//                .map(this::toWebResponse)
-//                .flatMap(this::fillTotal);
-
-//        return wasteItemRepository.findAll()
-//                .collectList()
-//                .map(list -> new PageSupport<>(
-//                        list
-//                                .stream()
-//                                .skip(req.getPage() * req.getSize())
-//                                .limit(req.getSize())
-//                                .collect(Collectors.toList()),
-//                        req.getPage(), req.getSize(), list.size()));
     }
 
-    private WasteGetListByUsernameResponse toWebResponse(List<WasteItem> wasteList) {
-        System.out.println(wasteList + "    bloo1    ");
-        List<WasteGetToWasteItemResponse> response = new ArrayList<>();
-        BeanUtils.copyProperties(wasteList, response);
+    private WasteGetListByUsernameResponse toWebResponse(List<WasteGetToWasteItemResponse> wasteList) {
         return WasteGetListByUsernameResponse.builder()
-                .ListWasteItem(response)
+                .ListWasteItem(wasteList)
                 .build();
     }
 
+    private WasteGetToWasteItemResponse toGetCustomerWebResponse(WasteItem wasteItem) {
+        WasteGetToWasteItemResponse response = new WasteGetToWasteItemResponse();
+        BeanUtils.copyProperties(wasteItem, response);
+        return response;
+    }
+
     private Mono<WasteGetListByUsernameResponse> fillTotal(WasteGetListByUsernameResponse response) {
-        System.out.println(response + "    bloo2    ");
         return wasteItemRepository.count()
                 .map(aLong -> {
                     response.setTotal(aLong);
