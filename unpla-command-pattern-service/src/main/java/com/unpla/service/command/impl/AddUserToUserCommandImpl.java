@@ -22,9 +22,6 @@ public class AddUserToUserCommandImpl implements AddUserToUserCommand {
     private UserRepository userRepository;
 
     @Autowired
-    private JWTUtil jwtUtil;
-
-    @Autowired
     private PBKDF2Encoder passwordEncoder;
 
     @Override

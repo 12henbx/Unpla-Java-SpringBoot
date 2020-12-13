@@ -1,4 +1,4 @@
-package com.unpla.entity.document;
+package com.unpla.model.controller;
 
 import com.unpla.entity.embedded.Coordinate;
 import com.unpla.entity.enums.MainWasteCategory;
@@ -7,19 +7,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.*;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
 import java.util.List;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
-public class Recycler {
-    @Id
+public class RecyclerAddResponse { // Todo: nambah recycler buat set list of recycler
     private String id;
 
     private String profilePhoto;
@@ -40,15 +35,11 @@ public class Recycler {
 
     private List<SubWasteCategory> subWasteCategories;
 
-    @LastModifiedDate
     private Long lastModifiedDate;
 
-    @LastModifiedBy
     private String lastModifiedBy;
 
-    @CreatedDate
     private Long createdDate;
 
-    @CreatedBy
     private String createdBy;
 }

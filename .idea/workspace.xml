@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/WasteGetListByUsernameRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/WasteGetListByUsernameRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/WasteGetListByUsernameRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/WasteGetListByUsernameRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddWasteToWasteItemCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddWasteToWasteItemCommandImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteListByUsernameCommandImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteToWasteItemCommandImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/Recycler.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/Recycler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddUserToUserCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddUserToUserCommandImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +63,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28390804" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
@@ -171,6 +164,9 @@
       <workItem from="1607443742379" duration="9505000" />
       <workItem from="1607492335105" duration="7534000" />
       <workItem from="1607538156514" duration="3941000" />
+      <workItem from="1607616015690" duration="1543000" />
+      <workItem from="1607793017843" duration="2998000" />
+      <workItem from="1607859690641" duration="2620000" />
     </task>
     <servers />
   </component>
