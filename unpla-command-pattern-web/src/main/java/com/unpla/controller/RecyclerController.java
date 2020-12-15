@@ -15,6 +15,7 @@ import reactor.core.scheduler.Schedulers;
 
 @RestController
 public class RecyclerController {
+
     @Autowired
     private CommandExecutor commandExecutor;
 

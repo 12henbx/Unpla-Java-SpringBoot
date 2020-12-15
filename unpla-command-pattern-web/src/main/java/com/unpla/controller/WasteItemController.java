@@ -78,7 +78,7 @@ public class WasteItemController {
 
     private WasteGetListByUsernameRequest toGetListWasteItem(String username, int page, int size){
         WasteGetListByUsernameRequest commandReq = new WasteGetListByUsernameRequest();
-        commandReq.setUserId(username);
+        commandReq.setUsername(username);
         commandReq.setPage(page);
         commandReq.setSize(size);
         return commandReq;

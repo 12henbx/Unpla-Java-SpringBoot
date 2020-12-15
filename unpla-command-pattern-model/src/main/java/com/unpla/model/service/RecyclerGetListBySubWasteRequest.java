@@ -1,5 +1,6 @@
 package com.unpla.model.service;
 
+import com.unpla.entity.enums.SubWasteCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,13 +12,13 @@ import javax.validation.constraints.NotBlank;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WasteGetListByUsernameRequest implements ServiceRequest {
+public class RecyclerGetListBySubWasteRequest implements ServiceRequest { //TODO: terakhir disini
     @NotBlank
-    private String username;
+    private SubWasteCategory subWasteCategory;
 
-//    @NotBlank
+    //    @NotBlank
     private int page;
 
-//    @NotBlank
+    //    @NotBlank
     private int size;
 }

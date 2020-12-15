@@ -7,6 +7,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.util.List;
 
@@ -14,7 +18,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RecyclerAddResponse {
+public class RecyclerGetToRecyclerResponse {
     private String id;
 
     private String profilePhoto;
@@ -34,12 +38,4 @@ public class RecyclerAddResponse {
     private List<MainWasteCategory> mainWasteCategories;
 
     private List<SubWasteCategory> subWasteCategories;
-
-    private Long lastModifiedDate;
-
-    private String lastModifiedBy;
-
-    private Long createdDate;
-
-    private String createdBy;
 }

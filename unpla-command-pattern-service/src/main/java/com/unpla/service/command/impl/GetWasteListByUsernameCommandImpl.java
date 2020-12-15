@@ -1,10 +1,12 @@
 package com.unpla.service.command.impl;
 
 import com.mongodb.MongoWriteException;
+import com.unpla.entity.document.User;
 import com.unpla.entity.document.WasteItem;
 import com.unpla.model.controller.WasteGetListByUsernameResponse;
 import com.unpla.model.controller.WasteGetToWasteItemResponse;
 import com.unpla.model.service.WasteGetListByUsernameRequest;
+import com.unpla.repository.UserRepository;
 import com.unpla.repository.WasteItemRepository;
 import com.unpla.service.command.GetWasteListByUsernameCommand;
 import org.springframework.beans.BeanUtils;
@@ -25,14 +27,26 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
     @Autowired
     private WasteItemRepository wasteItemRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public Mono<WasteGetListByUsernameResponse> execute(WasteGetListByUsernameRequest req) {
 
-        return wasteItemRepository.findWasteItemsByUserId(req.getUserId(), PageRequest.of(req.getPage(), req.getSize()))
+        return userRepository.findByUsername(req.getUsername())
+                .flatMapMany(userId -> wasteItemRepository.findWasteItemsByUserId(userId.getId(), PageRequest.of(req.getPage(), req.getSize())))
                 .map(this::toGetCustomerWebResponse)
                 .collectList()
                 .map(this::toWebResponse)
                 .flatMap(this::fillTotal);
+
+//        Mono<String> userId = userRepository.findByUsername(req.getUsername()).map(this::getUserId);
+//
+//        return wasteItemRepository.findWasteItemsByUserId(user.g, PageRequest.of(req.getPage(), req.getSize()))
+//                .map(this::toGetCustomerWebResponse)
+//                .collectList()
+//                .map(this::toWebResponse)
+//                .flatMap(this::fillTotal);
     }
 
     private WasteGetListByUsernameResponse toWebResponse(List<WasteGetToWasteItemResponse> wasteList) {

@@ -1,5 +1,6 @@
 package com.unpla.service.command.impl;
 
+import com.unpla.entity.document.Recycler;
 import com.unpla.model.controller.RecyclerAddResponse;
 import com.unpla.model.service.RecyclerAddRequest;
 import com.unpla.repository.RecyclerRepository;
@@ -16,8 +17,35 @@ public class AddRecyclerToRecyclerCommandImpl implements AddRecyclerToRecyclerCo
 
     @Override
     public Mono<RecyclerAddResponse> execute(RecyclerAddRequest request) {
-//        return Mono.fromCallable(() -> convertToUser(request))
-//                .flatMap(user -> recyclerRepository.save(user))
-//                .map(this::convertToUserResponse);
+        return Mono.fromCallable(() -> convertToRecycler(request))
+                .flatMap(user -> recyclerRepository.save(user))
+                .map(this::convertToRecyclerResponse);
+    }
+
+    private Recycler convertToRecycler(RecyclerAddRequest req){
+        return Recycler.builder()
+                .name(req.getName())
+                .address(req.getAddress())
+                .coordinate(req.getCoordinate())
+                .description(req.getDescription())
+                .mainWasteCategories(req.getMainWasteCategories())
+                .headerPhoto(req.getHeaderPhoto())
+                .profilePhoto(req.getProfilePhoto())
+                .subWasteCategories(req.getSubWasteCategories())
+                .build();
+    }
+
+    private RecyclerAddResponse convertToRecyclerResponse(Recycler recycler){
+        return RecyclerAddResponse.builder()
+                .name(recycler.getName())
+                .address(recycler.getAddress())
+                .coordinate(recycler.getCoordinate())
+                .description(recycler.getDescription())
+                .mainWasteCategories(recycler.getMainWasteCategories())
+                .headerPhoto(recycler.getHeaderPhoto())
+                .profilePhoto(recycler.getProfilePhoto())
+                .subWasteCategories(recycler.getSubWasteCategories())
+                .lastModifiedDate(recycler.getLastModifiedDate())
+                .build();
     }
 }
