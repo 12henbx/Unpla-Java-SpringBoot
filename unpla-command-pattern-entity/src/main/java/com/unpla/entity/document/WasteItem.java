@@ -21,12 +21,19 @@ import java.util.List;
 public class WasteItem {
     @Id
     private String id;
+
     private List<String> photo;
+
     private MainWasteCategory mainWasteCategory;
+
     private SubWasteCategory subWasteCategory;
+
     private Magnitude magnitude;
+
     private float weightValue;
+
     private String userId;
+
     private Boolean isDelete;
 
     @LastModifiedDate

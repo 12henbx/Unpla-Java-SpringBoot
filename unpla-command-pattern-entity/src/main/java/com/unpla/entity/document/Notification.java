@@ -18,15 +18,15 @@ public class Notification {
     @Id
     private String id;
 
-    private String idSender;
+    private String idRequester;
 
     private String idReceiver;
 
-    private NotificationGroup norificationGroup; // pembeli sampah, penjual sampah, pembeli barang, penjual barang
+    private NotificationGroup nGroupForReceiver; // pembeli sampah, penjual sampah, pembeli barang, penjual barang
 
     private NotificationType notificationType; // pesanan_baru, diproses, dikirim, sampai
 
-    private String content;
+    private String itemId;
 
     private boolean isRead;
 

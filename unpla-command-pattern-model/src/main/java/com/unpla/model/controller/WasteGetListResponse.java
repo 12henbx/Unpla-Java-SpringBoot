@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class WasteGetListByUsernameResponse {
+public class WasteGetListResponse {
 
     private Long total;
 

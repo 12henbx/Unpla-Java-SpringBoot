@@ -19,13 +19,22 @@ import java.util.Date;
 public class WasteTransaction {
     @Id
     private String id;
+
     private Date pickUpDate;
+
     private PeriodOfTime pickUpPeriod;
+
     private long totalPrice;
+
     private TransactionStatus status;
-    private String wasteItemId;
-    private String userId;
+
+    private String desc;
+
     private String recyclerId;
+
+    private String wasteItemId;
+
+    private String userId;
 
     @LastModifiedDate
     private Long lastModifiedDate;

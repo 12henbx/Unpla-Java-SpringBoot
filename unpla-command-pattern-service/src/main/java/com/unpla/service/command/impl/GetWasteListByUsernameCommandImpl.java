@@ -1,9 +1,7 @@
 package com.unpla.service.command.impl;
 
-import com.mongodb.MongoWriteException;
-import com.unpla.entity.document.User;
 import com.unpla.entity.document.WasteItem;
-import com.unpla.model.controller.WasteGetListByUsernameResponse;
+import com.unpla.model.controller.WasteGetListResponse;
 import com.unpla.model.controller.WasteGetToWasteItemResponse;
 import com.unpla.model.service.WasteGetListByUsernameRequest;
 import com.unpla.repository.UserRepository;
@@ -13,13 +11,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.server.ServerResponse;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsernameCommand {
@@ -31,7 +25,7 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
     private UserRepository userRepository;
 
     @Override
-    public Mono<WasteGetListByUsernameResponse> execute(WasteGetListByUsernameRequest req) {
+    public Mono<WasteGetListResponse> execute(WasteGetListByUsernameRequest req) {
 
         return userRepository.findByUsername(req.getUsername())
                 .flatMapMany(userId -> wasteItemRepository.findWasteItemsByUserId(userId.getId(), PageRequest.of(req.getPage(), req.getSize())))
@@ -49,8 +43,8 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
 //                .flatMap(this::fillTotal);
     }
 
-    private WasteGetListByUsernameResponse toWebResponse(List<WasteGetToWasteItemResponse> wasteList) {
-        return WasteGetListByUsernameResponse.builder()
+    private WasteGetListResponse toWebResponse(List<WasteGetToWasteItemResponse> wasteList) {
+        return WasteGetListResponse.builder()
                 .ListWasteItem(wasteList)
                 .build();
     }
@@ -61,7 +55,7 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
         return response;
     }
 
-    private Mono<WasteGetListByUsernameResponse> fillTotal(WasteGetListByUsernameResponse response) {
+    private Mono<WasteGetListResponse> fillTotal(WasteGetListResponse response) {
         return wasteItemRepository.count()
                 .map(aLong -> {
                     response.setTotal(aLong);
