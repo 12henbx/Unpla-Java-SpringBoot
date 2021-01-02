@@ -1,6 +1,5 @@
 package com.unpla.service.command.impl;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.unpla.entity.document.Notification;
 import com.unpla.entity.document.WasteItem;
 import com.unpla.entity.document.WasteTransaction;
@@ -11,11 +10,23 @@ import com.unpla.model.service.WasteAddToWasteItemAndTransactionRequest;
 import com.unpla.repository.NotificationRepository;
 import com.unpla.repository.WasteItemRepository;
 import com.unpla.repository.WasteTransactionRepository;
+import com.unpla.service.cloud.UploadFileGCP;
 import com.unpla.service.command.AddToWasteItemIAndTransactionCommand;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.Random;
+import java.util.UUID;
 
 @Service
 public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemIAndTransactionCommand {  // TODO: masuk datanya malah ke wasteTransaction
@@ -32,6 +43,8 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
 
     @Override
     public Mono<WasteAddToWasteItemAndTransactionResponse> execute(WasteAddToWasteItemAndTransactionRequest request) {
+        // TODO : atur nama file supaya beda2
+        convertBase64ToImage(request.getPhoto().get(0), "Photo_" + UUID.randomUUID() + ".jpg");
 
         WasteItem wasteItem = convertToWasteItem(request);
         wasteItemRepository.save(wasteItem);
@@ -70,7 +83,6 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
                 .status(req.getStatus())
                 .desc(req.getDesc())
                 .recyclerId(req.getRecyclerId())
-                .wasteItemId(req.getWasteItemId())
                 .build();
     }
 
@@ -83,7 +95,7 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
                 .isRead(Boolean.FALSE)
                 .nGroupForReceiver(NotificationGroup.penjual_sampah)
                 .notificationType(NotificationType.pesanan_baru)
-                .itemId(req.getWasteItemId())
+//                .itemId(req.getWasteItemId())
                 .build();
     }
 
@@ -96,7 +108,7 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
                 .isRead(Boolean.FALSE)
                 .nGroupForReceiver(NotificationGroup.pembeli_sampah)
                 .notificationType(NotificationType.pesanan_baru)
-                .itemId(req.getWasteItemId())
+//                .itemId(req.getWasteItemId())
                 .build();
     }
 
@@ -118,5 +130,19 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
                 .recyclerId(wasteTransaction.getRecyclerId())
                 .isSuccess(Boolean.TRUE)
                 .build();
+    }
+
+    private static void convertBase64ToImage(String encodedString, String outputFileName) {
+        try {
+//            FileOutputStream output = new FileOutputStream(outputFileName);
+            byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
+
+            // TODO : apakah file ditaruh di project dulu?
+//            UploadFileGCP.uploadObject("unpla-vision-api", "unpla-photo-storage", outputFileName,
+//                    "E:\\Project Bootcamp Blibli Future batch 4\\Project Phase 3\\unpla-command-pattern\\" + outputFileName);
+            UploadFileGCP.uploadObject("unpla-vision-api", "unpla-photo-storage", outputFileName, decodedBytes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.unpla.entity.document;
 
 import com.unpla.entity.embedded.Review;
+import com.unpla.entity.embedded.WasteTypeAmount;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,6 +34,10 @@ public class RecycledProduct {
     private List<Review> reviews;
 
     private long purchasedTimes;
+
+    private List<WasteTypeAmount> orderedWasteList;
+
+    private List<WasteTypeAmount> materialList;
 
     private String recyclerId;
 
