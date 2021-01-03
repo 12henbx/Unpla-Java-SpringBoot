@@ -11,7 +11,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class RecyclerAddRequest {
+public class RecyclerAddRequest implements ServiceRequest{
 
     private String profilePhoto;
 
