@@ -35,6 +35,8 @@ public class RecycledProduct {
 
     private long purchasedTimes;
 
+//    private CategoryName category;
+
     private List<WasteTypeAmount> orderedWasteList;
 
     private List<WasteTypeAmount> materialList;

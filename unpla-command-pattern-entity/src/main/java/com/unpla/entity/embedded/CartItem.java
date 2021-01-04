@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CartItem {
+
     private int quantity;
-    private RecycledProduct recycledProduct;
+
+    private String recycledProductId;
 }

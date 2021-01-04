@@ -10,8 +10,8 @@ import java.util.List;
 
 @Data
 @Builder
-public class RecycledProductAddRequest implements ServiceRequest{ //TODO: Cek lagi
-    @Id
+public class RecycledProductAddRequest implements ServiceRequest{
+
     private String id;
 
     private List<String> productImages;
@@ -35,12 +35,4 @@ public class RecycledProductAddRequest implements ServiceRequest{ //TODO: Cek la
     private String recyclerId;
 
     private boolean isDelete;
-
-    private Long lastModifiedDate;
-
-    private String lastModifiedBy;
-
-    private Long createdDate;
-
-    private String createdBy;
 }
