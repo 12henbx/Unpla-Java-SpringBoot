@@ -9,14 +9,5 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RecycledProductAddResponse {
-    private String id;
-
-    private Long lastModifiedDate;
-
-    private String lastModifiedBy;
-
-    private Long createdDate;
-
-    private String createdBy;
+public class WasteGetToTransactionResponse {
 }

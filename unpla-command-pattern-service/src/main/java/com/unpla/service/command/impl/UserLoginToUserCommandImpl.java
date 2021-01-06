@@ -31,17 +31,13 @@ public class UserLoginToUserCommandImpl implements UserLoginToUserCommand {
 
     @Override
     public Mono<UserLoginResponse> execute(LoginUserRequest request) {
-        Mono<User> user = userRepository.findByUsername(request.getUsername()).subscribeOn(Schedulers.elastic());
-//        return Mono.fromCallable(() -> convertToUser(request))
-//                .flatMap(user -> userRepository.save(user))
-//                .map(this::convertToUserResponse);
-
-//        return ResponseEntity.ok(new AuthResponse(jwtUtil.generateToken(userDetails)));
+        Mono<User> user = userRepository.findByUsername(request.getUsername())
+                .subscribeOn(Schedulers.elastic());
 
         return userRepository.findByUsername(request.getUsername())
                 .map(userOne -> {
                     if (passwordEncoder.matches(request.getPassword(), userOne.getPassword())){
-                        return new UserLoginResponse(jwtUtil.generateToken(userOne));
+                        return new UserLoginResponse(userOne.getId(), jwtUtil.generateToken(userOne));
                     }
                     throw new RuntimeException("Token tidak ditemukan");
                 });

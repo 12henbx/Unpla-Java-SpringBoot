@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.*;
 
 @Service
-public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemIAndTransactionCommand {  // TODO: masuk datanya malah ke wasteTransaction
+public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemIAndTransactionCommand {
 
     @Autowired
     private WasteItemRepository wasteItemRepository;
@@ -144,11 +144,8 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
 
     private static void convertBase64ToImage(String encodedString, String outputFileName) {
         try {
-
 //            FileOutputStream output = new FileOutputStream(outputFileName);
             byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
-
-            // TODO : apakah file ditaruh di project dulu?
             UploadFileGCP.uploadObject("unpla-vision-api", "unpla-photo-storage", outputFileName, decodedBytes);
         } catch (IOException e) {
             e.printStackTrace();

@@ -5,9 +5,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Data
-//@Builder
-//@AllArgsConstructor
-//@NoArgsConstructor
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserUpdateResponse {
+
+    private String id;
+
+    private Long lastModifiedDate;
+
+    private String lastModifiedBy;
+
+    private Long createdDate;
+
+    private String createdBy;
 }

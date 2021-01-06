@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecyclerGetListBySubWasteResponse {
+
     private Long total;
 
     private List<RecyclerGetToRecyclerResponse> ListWasteItem;

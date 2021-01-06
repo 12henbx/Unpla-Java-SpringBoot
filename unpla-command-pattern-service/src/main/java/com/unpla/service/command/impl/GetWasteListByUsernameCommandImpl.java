@@ -33,14 +33,6 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
                 .collectList()
                 .map(this::toWebResponse)
                 .flatMap(this::fillTotal);
-
-//        Mono<String> userId = userRepository.findByUsername(req.getUsername()).map(this::getUserId);
-//
-//        return wasteItemRepository.findWasteItemsByUserId(user.g, PageRequest.of(req.getPage(), req.getSize()))
-//                .map(this::toGetCustomerWebResponse)
-//                .collectList()
-//                .map(this::toWebResponse)
-//                .flatMap(this::fillTotal);
     }
 
     private WasteGetListResponse toWebResponse(List<WasteGetToWasteItemResponse> wasteList) {

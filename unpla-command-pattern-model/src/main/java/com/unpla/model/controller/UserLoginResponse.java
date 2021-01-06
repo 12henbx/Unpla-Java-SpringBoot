@@ -14,6 +14,8 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 public class UserLoginResponse {
 
+    private String id;
+
     @NotBlank
     private String token;
 

@@ -22,7 +22,7 @@ public class RecyclerController {
     @Autowired
     private CommandExecutor commandExecutor;
 
-    @PostMapping(value = "/recycler/submit", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/recycler/add", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response<RecyclerAddResponse>> addRecycler(@RequestBody RecyclerAddRequest recyclerAddRequest) {
 
         return commandExecutor.execute(AddRecyclerToRecyclerCommand.class, recyclerAddRequest)
@@ -31,7 +31,7 @@ public class RecyclerController {
     }
 
     @GetMapping(
-            value = "/recycler/{subWaste}", //TODO: cek baris ini
+            value = "/{subWaste}/recyclers",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Mono<Response<RecyclerGetListBySubWasteResponse>> getListbySubWaste(@PathVariable("Sub Waste Category") SubWasteCategory subWaste,

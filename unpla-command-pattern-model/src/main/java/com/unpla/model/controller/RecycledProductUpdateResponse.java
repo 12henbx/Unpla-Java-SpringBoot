@@ -10,4 +10,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecycledProductUpdateResponse {
+
+    private String id;
+
+    private Long lastModifiedDate;
+
+    private String lastModifiedBy;
+
+    private Long createdDate;
+
+    private String createdBy;
 }

@@ -19,18 +19,31 @@ import java.util.List;
 public class User {
     @Id
     private String id;
+
     private String fullName;
+
     private String email;
+
     private String username;
+
     private String password;
+
     private String profilePic;
+
     private String phone;
+
     private int balance;
+
     private int point;
-    private String Address;
+
+    private String address;
+
     private Coordinate coordinate;
+
     private String recyclerId;
+
     private List<String> cartId;
+
     private boolean isRecyclerActive;
 
     private boolean isDelete;

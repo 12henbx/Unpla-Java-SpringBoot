@@ -6,9 +6,11 @@ import com.unpla.model.controller.WasteAddToWasteItemAndTransactionResponse;
 import com.unpla.model.controller.WasteGetListResponse;
 import com.unpla.model.controller.WasteGetToWasteItemResponse;
 import com.unpla.model.service.WasteAddToWasteItemAndTransactionRequest;
+import com.unpla.model.service.WasteGetListByUserIdRequest;
 import com.unpla.model.service.WasteGetListByUsernameRequest;
 import com.unpla.model.service.WasteGetToWasteItemRequest;
 import com.unpla.service.command.AddToWasteItemIAndTransactionCommand;
+import com.unpla.service.command.GetWasteListByUserIdCommand;
 import com.unpla.service.command.GetWasteListByUsernameCommand;
 import com.unpla.service.command.GetWasteToWasteItemCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,8 +60,8 @@ public class WasteItemController {
                                                                   @PathVariable("username") String username,
                                                                   @RequestParam(name = "page") int page,
                                                                   @RequestParam(name = "size") int size
-                       ) { // TODO : get waste by wasteitemid sama userid. Get userID ato username? Trus ini mungkin IDnya unsuppoerted media type object to string
-//        System.out.println(commandExecutor.execute(GetWasteListByUsernameCommand.class, req) + "    BLUUU   ");
+                       ) {
+
         return commandExecutor.execute(GetWasteListByUsernameCommand.class, toGetListWasteItem(username, page, size))
                 .map(response -> {
                     System.out.println(response.getListWasteItem() + "          BLA     ");
@@ -71,6 +73,29 @@ public class WasteItemController {
     private WasteGetListByUsernameRequest toGetListWasteItem(String username, int page, int size){
         WasteGetListByUsernameRequest commandReq = new WasteGetListByUsernameRequest();
         commandReq.setUsername(username);
+        commandReq.setPage(page);
+        commandReq.setSize(size);
+        return commandReq;
+    }
+
+    @GetMapping(
+            value = "/waste-item/{userId}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Mono<Response<WasteGetListResponse>> getListbyUserId(@PathVariable("username") String userId,
+                                                                  @RequestParam(name = "page") int page,
+                                                                  @RequestParam(name = "size") int size){
+
+        return commandExecutor.execute(GetWasteListByUserIdCommand.class, toUserIdGetListWasteItem(userId, page, size))
+                .map(response -> {
+                    return Response.status(HttpStatus.OK, response);
+                })
+                .subscribeOn(Schedulers.elastic());
+    }
+
+    private WasteGetListByUserIdRequest toUserIdGetListWasteItem(String userId, int page, int size){
+        WasteGetListByUserIdRequest commandReq = new WasteGetListByUserIdRequest();
+        commandReq.setUserId(userId);
         commandReq.setPage(page);
         commandReq.setSize(size);
         return commandReq;

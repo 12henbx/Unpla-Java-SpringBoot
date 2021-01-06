@@ -10,4 +10,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecycledProductAddToCartResponse {
+
+    private String recycledProductId;
+
+    private String cartId;
+
+    private Long lastModifiedDate;
+
+    private String lastModifiedBy;
+
+    private Long createdDate;
+
+    private String createdBy;
+
 }
