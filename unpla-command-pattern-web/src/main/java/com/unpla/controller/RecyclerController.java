@@ -39,10 +39,7 @@ public class RecyclerController {
                                                                                @RequestParam(name = "size") int size
     ) {
         return commandExecutor.execute(GetRecyclerListBySubWasteCommand.class, toGetListRecycler(subWaste, page, size))
-                .map(response -> {
-                    System.out.println(response.getListWasteItem() + "          BLA     ");
-                    return Response.status(HttpStatus.OK, response);
-                })
+                .map(response -> Response.status(HttpStatus.OK, response))
                 .subscribeOn(Schedulers.elastic());
     }
 

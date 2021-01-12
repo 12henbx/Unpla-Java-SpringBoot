@@ -30,7 +30,7 @@ public class AddUserToUserCommandImpl implements AddUserToUserCommand {
 
     private User convertToUser(UserAddRequest req){
         User user = User.builder()
-                .fullName(req.getNama())
+                .fullName(req.getName())
                 .username(req.getUsername())
                 .password(passwordEncoder.encode(req.getPassword()))
                 .email(req.getEmail())

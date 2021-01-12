@@ -52,37 +52,37 @@ public class WasteItemController {
         return commandReq;
     }
 
-    @GetMapping(
-            value = "/waste-item/{username}",
-            produces = MediaType.APPLICATION_JSON_VALUE
-    )
-    public Mono<Response<WasteGetListResponse>> getListbyUsername(//@RequestBody WasteGetListByUsernameRequest req,
-                                                                  @PathVariable("username") String username,
-                                                                  @RequestParam(name = "page") int page,
-                                                                  @RequestParam(name = "size") int size
-                       ) {
-
-        return commandExecutor.execute(GetWasteListByUsernameCommand.class, toGetListWasteItem(username, page, size))
-                .map(response -> {
-                    System.out.println(response.getListWasteItem() + "          BLA     ");
-                    return Response.status(HttpStatus.OK, response);
-                })
-                .subscribeOn(Schedulers.elastic());
-    }
-
-    private WasteGetListByUsernameRequest toGetListWasteItem(String username, int page, int size){
-        WasteGetListByUsernameRequest commandReq = new WasteGetListByUsernameRequest();
-        commandReq.setUsername(username);
-        commandReq.setPage(page);
-        commandReq.setSize(size);
-        return commandReq;
-    }
+//    @GetMapping(
+//            value = "/waste-item/{username}",
+//            produces = MediaType.APPLICATION_JSON_VALUE
+//    )
+//    public Mono<Response<WasteGetListResponse>> getListbyUsername(//@RequestBody WasteGetListByUsernameRequest req,
+//                                                                  @PathVariable("username") String username,
+//                                                                  @RequestParam(name = "page") int page,
+//                                                                  @RequestParam(name = "size") int size
+//                       ) {
+//
+//        return commandExecutor.execute(GetWasteListByUsernameCommand.class, toGetListWasteItem(username, page, size))
+//                .map(response -> {
+//                    System.out.println(response.getListWasteItem() + "          BLA     ");
+//                    return Response.status(HttpStatus.OK, response);
+//                })
+//                .subscribeOn(Schedulers.elastic());
+//    }
+//
+//    private WasteGetListByUsernameRequest toGetListWasteItem(String username, int page, int size){
+//        WasteGetListByUsernameRequest commandReq = new WasteGetListByUsernameRequest();
+//        commandReq.setUsername(username);
+//        commandReq.setPage(page);
+//        commandReq.setSize(size);
+//        return commandReq;
+//    }
 
     @GetMapping(
             value = "/waste-item/{userId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<WasteGetListResponse>> getListbyUserId(@PathVariable("username") String userId,
+    public Mono<Response<WasteGetListResponse>> getListbyUserId(@PathVariable("userId") String userId,
                                                                   @RequestParam(name = "page") int page,
                                                                   @RequestParam(name = "size") int size){
 

@@ -13,8 +13,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import java.util.Objects;
+
 @Component
-public class SecurityContextRepository implements ServerSecurityContextRepository {
+public class SecurityContextRepository implements ServerSecurityContextRepository { // TODO: Ngurusin Auth di Cookies
     @Autowired
     private AuthenticationManager authenticationManager;
 
@@ -26,10 +28,16 @@ public class SecurityContextRepository implements ServerSecurityContextRepositor
     @Override
     public Mono<SecurityContext> load(ServerWebExchange serverWebExchange) {
         ServerHttpRequest request = serverWebExchange.getRequest();
-        String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
+//        String authHeader = request.getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
+        String authHeader = null;
+        if(request.getCookies().getFirst("cookieAuth") != null){
+            authHeader = request.getCookies().getFirst("cookieAuth").toString();
+        }
 
-        if (authHeader != null && authHeader.startsWith("Bearer ")){
-            String authToken = authHeader.substring(7);
+//        if (authHeader != null && authHeader.startsWith("bearer ")){
+        if (authHeader != null && authHeader.startsWith("cookieAuth=")){
+//            String authToken = authHeader.substring(7);
+            String authToken = authHeader.substring(11);
             Authentication auth = new UsernamePasswordAuthenticationToken(authToken, authToken);
             return this.authenticationManager.authenticate(auth).map(SecurityContextImpl::new);
         } else {

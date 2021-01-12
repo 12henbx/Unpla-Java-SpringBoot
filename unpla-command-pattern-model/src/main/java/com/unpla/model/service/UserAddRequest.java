@@ -16,9 +16,8 @@ public class UserAddRequest implements ServiceRequest {
     @NotBlank
     private String password;
 
-    @NotBlank
     private String email;
 
     @NotBlank
-    private String nama;
+    private String name;
 }

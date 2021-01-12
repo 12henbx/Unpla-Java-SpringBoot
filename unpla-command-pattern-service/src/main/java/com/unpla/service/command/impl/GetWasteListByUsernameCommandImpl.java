@@ -28,31 +28,23 @@ public class GetWasteListByUsernameCommandImpl implements GetWasteListByUsername
     public Mono<WasteGetListResponse> execute(WasteGetListByUsernameRequest req) {
 
         return userRepository.findByUsername(req.getUsername())
-                .flatMapMany(userId -> wasteItemRepository.findWasteItemsByUserId(userId.getId(), PageRequest.of(req.getPage(), req.getSize())))
-                .map(this::toGetCustomerWebResponse)
+                .flatMapMany(userId -> wasteItemRepository.findWasteItemsByUserId(userId.getId()))
+                .map(this::toGetWasteItemWebResponse)
                 .collectList()
-                .map(this::toWebResponse)
-                .flatMap(this::fillTotal);
+                .map(this::toWebResponse);
     }
 
     private WasteGetListResponse toWebResponse(List<WasteGetToWasteItemResponse> wasteList) {
         return WasteGetListResponse.builder()
-                .ListWasteItem(wasteList)
+                .listWasteItem(wasteList)
+                .total(wasteList.size())
                 .build();
     }
 
-    private WasteGetToWasteItemResponse toGetCustomerWebResponse(WasteItem wasteItem) {
+    private WasteGetToWasteItemResponse toGetWasteItemWebResponse(WasteItem wasteItem) {
         WasteGetToWasteItemResponse response = new WasteGetToWasteItemResponse();
         BeanUtils.copyProperties(wasteItem, response);
         return response;
-    }
-
-    private Mono<WasteGetListResponse> fillTotal(WasteGetListResponse response) {
-        return wasteItemRepository.count()
-                .map(aLong -> {
-                    response.setTotal(aLong);
-                    return response;
-                });
     }
 
 }

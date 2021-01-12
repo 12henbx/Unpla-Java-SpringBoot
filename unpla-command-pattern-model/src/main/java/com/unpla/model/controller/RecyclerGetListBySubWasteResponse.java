@@ -15,5 +15,5 @@ public class RecyclerGetListBySubWasteResponse {
 
     private Long total;
 
-    private List<RecyclerGetToRecyclerResponse> ListWasteItem;
+    private List<RecyclerGetToRecyclerResponse> listWasteItem;
 }

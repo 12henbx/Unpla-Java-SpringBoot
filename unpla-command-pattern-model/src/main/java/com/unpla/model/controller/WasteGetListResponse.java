@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class WasteGetListResponse {
 
-    private Long total;
+    private int total;
 
-    private List<WasteGetToWasteItemResponse> ListWasteItem;
+    private List<WasteGetToWasteItemResponse> listWasteItem;
 }

@@ -14,7 +14,4 @@ import javax.validation.constraints.NotBlank;
 public class WasteGetToWasteItemRequest implements ServiceRequest {
     @NotBlank
     private String wasteItemId;
-
-    @NotBlank
-    private String username;
 }

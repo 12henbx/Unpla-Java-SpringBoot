@@ -8,5 +8,6 @@ import reactor.core.publisher.Flux;
 import java.util.List;
 
 public interface WasteItemRepository extends ReactiveMongoRepository<WasteItem, String> {
-    Flux<WasteItem> findWasteItemsByUserId(String userId, Pageable pageable);
+//    Flux<WasteItem> findWasteItemsByUserId(String userId, Pageable pageable);
+    Flux<WasteItem> findWasteItemsByUserId(String userId);
 }

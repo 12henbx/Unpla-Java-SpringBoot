@@ -18,6 +18,8 @@ import java.util.List;
 public class WasteGetToWasteItemResponse {
 //     Waste Item
 
+    private String wasteItemId;
+
     private List<String> photo;
 
     private MainWasteCategory mainWasteCategory;

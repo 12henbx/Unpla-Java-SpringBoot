@@ -27,6 +27,8 @@ public class RecycledProductGetResponse {
 
     private float totalRating;
 
+    private int submitRatingCount;
+
     private List<Review> reviews;
 
     private long purchasedTimes;
