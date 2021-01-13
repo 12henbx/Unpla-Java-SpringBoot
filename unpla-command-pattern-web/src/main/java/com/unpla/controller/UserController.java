@@ -5,6 +5,7 @@ import com.blibli.oss.command.CommandExecutor;
 //import com.unpla.config.security.PBKDF2Encoder;
 import com.unpla.model.controller.Response;
 import com.unpla.model.controller.UserAddResponse;
+import com.unpla.model.controller.UserLoginResponse;
 import com.unpla.model.service.UserAddRequest;
 import com.unpla.model.service.LoginUserRequest;
 import com.unpla.service.command.AddUserToUserCommand;
@@ -46,6 +47,7 @@ public class UserController {
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<String>> login(@RequestBody LoginUserRequest loginRequest) {
 
+//    public Mono<Response<UserLoginResponse>> login(@RequestBody LoginUserRequest loginRequest) {
 //        return commandExecutor.execute(UserLoginToUserCommand.class, loginRequest)
 ////                .map((userAuth) -> {
 ////                    ResponseCookie cookie = ResponseCookie.from("cookieAuth", userAuth.getToken()).build();
@@ -56,12 +58,16 @@ public class UserController {
 
         return commandExecutor.execute(UserLoginToUserCommand.class, loginRequest)
                 .map((userAuth) -> {
-                    ResponseCookie cookie = ResponseCookie.from("cookieAuth", userAuth.getToken()).secure(false).httpOnly(true).build();
+                    ResponseCookie cookie = ResponseCookie.from("cookieAuth", userAuth.getToken()).secure(true).httpOnly(true).build(); // TODO: harusnya secure true
 
                     return ResponseEntity.ok()
                             .header(HttpHeaders.SET_COOKIE, cookie.toString())
                             .body(userAuth.getId());
                 })
                 .subscribeOn(Schedulers.elastic());
+
+//        return commandExecutor.execute(UserLoginToUserCommand.class, loginRequest)
+//                .map(Response::ok)
+//                .subscribeOn(Schedulers.elastic());
     }
 }

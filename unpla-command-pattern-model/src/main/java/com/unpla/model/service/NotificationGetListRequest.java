@@ -9,6 +9,8 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class NotificationGetListRequest implements ServiceRequest{
 
     @NotBlank

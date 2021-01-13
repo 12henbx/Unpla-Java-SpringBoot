@@ -13,7 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 public class NotificationGetListResponse { //TODO: notification get list dan get by id
 
-    private int total;
+    private int totalRecyclerNotif;
 
-    private List<NotificationGetToNotificationResponse> listNotification;
+    private int totalUserNotif;
+
+    private List<NotificationGetToNotificationResponse> recyclerNotifList;
+
+    private List<NotificationGetToNotificationResponse> userNotifList;
 }

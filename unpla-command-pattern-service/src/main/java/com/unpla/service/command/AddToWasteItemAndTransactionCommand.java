@@ -4,5 +4,5 @@ import com.blibli.oss.command.Command;
 import com.unpla.model.controller.WasteAddToWasteItemAndTransactionResponse;
 import com.unpla.model.service.WasteAddToWasteItemAndTransactionRequest;
 
-public interface AddToWasteItemIAndTransactionCommand extends Command<WasteAddToWasteItemAndTransactionRequest, WasteAddToWasteItemAndTransactionResponse> {
+public interface AddToWasteItemAndTransactionCommand extends Command<WasteAddToWasteItemAndTransactionRequest, WasteAddToWasteItemAndTransactionResponse> {
 }

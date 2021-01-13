@@ -15,11 +15,11 @@ public class NotificationGetToNotificationResponse {
 
     private String id;
 
-    private String idRequester;
+    private String idUser;
 
-    private String idReceiver;
+    private String idRecycler;
 
-    private NotificationGroup nGroupForReceiver; // pembeli sampah, penjual sampah, pembeli barang, penjual barang
+    private NotificationGroup notifGroupForRecycler; // pembelian sampah, pembelian barang
 
     private NotificationType notificationType; // pesanan_baru, diproses, dikirim, sampai
 

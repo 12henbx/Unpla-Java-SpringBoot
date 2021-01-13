@@ -7,11 +7,9 @@ import com.unpla.model.controller.WasteGetListResponse;
 import com.unpla.model.controller.WasteGetToWasteItemResponse;
 import com.unpla.model.service.WasteAddToWasteItemAndTransactionRequest;
 import com.unpla.model.service.WasteGetListByUserIdRequest;
-import com.unpla.model.service.WasteGetListByUsernameRequest;
 import com.unpla.model.service.WasteGetToWasteItemRequest;
-import com.unpla.service.command.AddToWasteItemIAndTransactionCommand;
+import com.unpla.service.command.AddToWasteItemAndTransactionCommand;
 import com.unpla.service.command.GetWasteListByUserIdCommand;
-import com.unpla.service.command.GetWasteListByUsernameCommand;
 import com.unpla.service.command.GetWasteToWasteItemCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +27,7 @@ public class WasteItemController {
     @PostMapping(value = "/add-waste-item", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response<WasteAddToWasteItemAndTransactionResponse>> addWasteItem(@RequestBody WasteAddToWasteItemAndTransactionRequest wasteItemRequest) {
 
-        return commandExecutor.execute(AddToWasteItemIAndTransactionCommand.class, wasteItemRequest)
+        return commandExecutor.execute(AddToWasteItemAndTransactionCommand.class, wasteItemRequest)
                 .map(Response::ok)
                 .subscribeOn(Schedulers.elastic());
     }

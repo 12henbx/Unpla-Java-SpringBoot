@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Service
 public class AddUserToUserCommandImpl implements AddUserToUserCommand {
@@ -30,12 +31,21 @@ public class AddUserToUserCommandImpl implements AddUserToUserCommand {
 
     private User convertToUser(UserAddRequest req){
         User user = User.builder()
+                .id(UUID.randomUUID().toString())
                 .fullName(req.getName())
                 .username(req.getUsername())
                 .password(passwordEncoder.encode(req.getPassword()))
                 .email(req.getEmail())
                 .isDelete(Boolean.FALSE)
-                .isRecyclerActive(Boolean.FALSE)
+                .isRecyclerActive(req.isRecyclerActive())
+                .address(req.getAddress())
+                .balance(req.getBalance())
+                .cartId(req.getCartId())
+                .coordinate(req.getCoordinate())
+                .phone(req.getPhone())
+                .point(req.getPoint())
+                .profilePic(req.getProfilePic())
+                .recyclerId(req.getRecyclerId())
                 .lastModifiedDate(new Date().getTime())
                 .lastModifiedBy(req.getUsername())
                 .createdDate(new Date().getTime())

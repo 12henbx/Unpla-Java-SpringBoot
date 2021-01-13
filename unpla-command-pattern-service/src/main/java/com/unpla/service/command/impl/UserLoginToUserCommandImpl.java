@@ -31,8 +31,6 @@ public class UserLoginToUserCommandImpl implements UserLoginToUserCommand {
 
     @Override
     public Mono<UserLoginResponse> execute(LoginUserRequest request) {
-        Mono<User> user = userRepository.findByUsername(request.getUsername())
-                .subscribeOn(Schedulers.elastic());
 
         return userRepository.findByUsername(request.getUsername())
                 .map(userOne -> {

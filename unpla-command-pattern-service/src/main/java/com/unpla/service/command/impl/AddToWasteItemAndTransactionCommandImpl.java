@@ -11,22 +11,17 @@ import com.unpla.repository.NotificationRepository;
 import com.unpla.repository.WasteItemRepository;
 import com.unpla.repository.WasteTransactionRepository;
 import com.unpla.service.cloud.UploadFileGCP;
-import com.unpla.service.command.AddToWasteItemIAndTransactionCommand;
-import org.springframework.beans.BeanUtils;
+import com.unpla.service.command.AddToWasteItemAndTransactionCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
 @Service
-public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemIAndTransactionCommand {
+public class AddToWasteItemAndTransactionCommandImpl implements AddToWasteItemAndTransactionCommand {
 
     @Autowired
     private WasteItemRepository wasteItemRepository;
@@ -62,8 +57,8 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
         Notification notificationForRecycler = createNotificationRecycler(request);
         notificationRepository.insert(notificationForRecycler).subscribe();
 
-        Notification notificationForUser = createNotificationUser(request);
-        notificationRepository.insert(notificationForUser).subscribe();
+//        Notification notificationForUser = createNotificationUser(request);
+//        notificationRepository.insert(notificationForUser).subscribe();
 
         return Mono.fromCallable(() -> convertToWasteItemAndTransactionResponse(wasteItem, wasteTransaction));
     }
@@ -99,28 +94,28 @@ public class AddToWasteItemIAndTransactionCommandImpl implements AddToWasteItemI
     private Notification createNotificationRecycler(WasteAddToWasteItemAndTransactionRequest req){
 
         return Notification.builder()
-                .idReceiver(req.getRecyclerId())
-                .idRequester(req.getUserId())
+                .idRecycler(req.getRecyclerId())
+                .idUser(req.getUserId())
                 .isDelete(Boolean.FALSE)
                 .isRead(Boolean.FALSE)
-                .nGroupForReceiver(NotificationGroup.penjual_sampah)
+                .notifGroupForRecycler(NotificationGroup.pembelian_sampah)
                 .notificationType(NotificationType.pesanan_baru)
                 .itemId(randomUUID)
                 .build();
     }
 
-    private Notification createNotificationUser(WasteAddToWasteItemAndTransactionRequest req){
-
-        return Notification.builder()
-                .idReceiver(req.getUserId())
-                .idRequester(req.getRecyclerId())
-                .isDelete(Boolean.FALSE)
-                .isRead(Boolean.FALSE)
-                .nGroupForReceiver(NotificationGroup.pembeli_sampah)
-                .notificationType(NotificationType.pesanan_baru)
-                .itemId(randomUUID)
-                .build();
-    }
+//    private Notification createNotificationUser(WasteAddToWasteItemAndTransactionRequest req){
+//
+//        return Notification.builder()
+//                .idUser(req.getUserId())
+//                .idRecycler(req.getRecyclerId())
+//                .isDelete(Boolean.FALSE)
+//                .isRead(Boolean.FALSE)
+//                .notifGroupForRecycler(NotificationGroup.pembelian_sampah)
+//                .notificationType(NotificationType.pesanan_baru)
+//                .itemId(randomUUID)
+//                .build();
+//    }
 
 
     private WasteAddToWasteItemAndTransactionResponse convertToWasteItemAndTransactionResponse(

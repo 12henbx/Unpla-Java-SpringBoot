@@ -32,7 +32,7 @@ public class ReProductController {
             value = "/recycled-product/all",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<RecycledProductGetListResponse>> reProductGetList(@RequestBody RecycledProductGetListRequest recycledProductGetListRequest) {
+    public Mono<Response<RecycledProductGetListResponse>> reProductGetList(RecycledProductGetListRequest recycledProductGetListRequest) {
         return commandExecutor.execute(GetReProductListCommand.class, recycledProductGetListRequest)
                 .map(Response::ok)
                 .subscribeOn(Schedulers.elastic());
