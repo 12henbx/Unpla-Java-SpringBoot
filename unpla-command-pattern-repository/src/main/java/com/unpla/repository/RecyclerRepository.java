@@ -7,5 +7,6 @@ import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import reactor.core.publisher.Flux;
 
 public interface RecyclerRepository extends ReactiveMongoRepository<Recycler, String> {
-    Flux<Recycler> findRecyclersBySubWasteCategoriesContaining(SubWasteCategory subWasteCategory, Pageable pageable);
+    Flux<Recycler> findRecyclersBySubWasteCategoriesContains(SubWasteCategory subWasteCategory);
+
 }

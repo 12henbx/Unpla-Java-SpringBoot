@@ -22,7 +22,7 @@ public class GetRecyclerListBySubWasteCommandImpl implements GetRecyclerListBySu
 
     @Override
     public Mono<RecyclerGetListBySubWasteResponse> execute(RecyclerGetListBySubWasteRequest request) {
-        return recyclerRepository.findRecyclersBySubWasteCategoriesContaining(request.getSubWasteCategory(), PageRequest.of(request.getPage(), request.getSize()))
+        return recyclerRepository.findRecyclersBySubWasteCategoriesContains(request.getSubWasteCategory())
                 .map(this::toRecyclerWebResponse)
                 .collectList()
                 .map(this::toWebResponse);

@@ -13,12 +13,12 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RecyclerGetListBySubWasteRequest implements ServiceRequest{
-    @NotBlank
+
     private SubWasteCategory subWasteCategory;
 
     //    @NotBlank
-    private int page;
+//    private int page;
 
     //    @NotBlank
-    private int size;
+//    private int size;
 }

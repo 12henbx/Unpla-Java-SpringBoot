@@ -34,20 +34,15 @@ public class RecyclerController {
             value = "/{subWaste}/recyclers",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<RecyclerGetListBySubWasteResponse>> getListbySubWaste(@PathVariable("Sub Waste Category") SubWasteCategory subWaste,
-                                                                               @RequestParam(name = "page") int page,
-                                                                               @RequestParam(name = "size") int size
-    ) {
-        return commandExecutor.execute(GetRecyclerListBySubWasteCommand.class, toGetListRecycler(subWaste, page, size))
+    public Mono<Response<RecyclerGetListBySubWasteResponse>> getListbySubWaste(@PathVariable("subWaste") SubWasteCategory subWaste) {
+        return commandExecutor.execute(GetRecyclerListBySubWasteCommand.class, toGetListRecycler(subWaste))
                 .map(response -> Response.status(HttpStatus.OK, response))
                 .subscribeOn(Schedulers.elastic());
     }
 
-    private RecyclerGetListBySubWasteRequest toGetListRecycler(SubWasteCategory subWaste, int page, int size){
+    private RecyclerGetListBySubWasteRequest toGetListRecycler(SubWasteCategory subWaste){
         RecyclerGetListBySubWasteRequest commandReq = new RecyclerGetListBySubWasteRequest();
         commandReq.setSubWasteCategory(subWaste);
-        commandReq.setPage(page);
-        commandReq.setSize(size);
         return commandReq;
     }
 }
