@@ -42,7 +42,7 @@ public class AddToWasteItemAndTransactionCommandImpl implements AddToWasteItemAn
         randomUUID = UUID.randomUUID().toString();
         int i=0;
 
-        for (String eachPath : request.getPhoto()) {
+        for (String eachPath : request.getPhotos()) {
             String outputFilePath = "WasteItemPhotos/Photo_" + randomUUID + "_" + i++ + ".jpg";
             convertBase64ToImage(eachPath, outputFilePath);
             photosPath.add("https://storage.googleapis.com/unpla-photo-storage/" + outputFilePath);
@@ -69,7 +69,7 @@ public class AddToWasteItemAndTransactionCommandImpl implements AddToWasteItemAn
                 .id(randomUUID)
                 .photo(photosPath)
                 .isDelete(Boolean.FALSE)
-                .photo(req.getPhoto())
+                .photo(req.getPhotos())
                 .mainWasteCategory(req.getMainWasteCategory())
                 .subWasteCategory(req.getSubWasteCategory())
                 .weightValue(req.getWeightValue())

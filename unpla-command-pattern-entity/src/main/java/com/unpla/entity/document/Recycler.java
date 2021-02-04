@@ -1,8 +1,8 @@
 package com.unpla.entity.document;
 
 import com.unpla.entity.embedded.Coordinate;
-import com.unpla.entity.enums.MainWasteCategory;
-import com.unpla.entity.enums.SubWasteCategory;
+import com.unpla.entity.embedded.MainWastePrice;
+import com.unpla.entity.embedded.SubWastePrice;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -36,9 +35,9 @@ public class Recycler {
 
     private List<String> recycledProductId;
 
-    private List<MainWasteCategory> mainWasteCategories;
+    private List<MainWastePrice> mainWastePriceList;
 
-    private List<SubWasteCategory> subWasteCategories;
+    private List<SubWastePrice> subWastePriceList;
 
     @LastModifiedDate
     private Long lastModifiedDate;

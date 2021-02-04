@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class WasteAddToWasteItemAndTransactionRequest implements ServiceRequest {
 //    @NotBlank
-    private List<String> photo;
+    private List<String> photos;
 
     private MainWasteCategory mainWasteCategory;
 
@@ -38,7 +38,6 @@ public class WasteAddToWasteItemAndTransactionRequest implements ServiceRequest 
 
     private TransactionStatus status;
 
-    @NotBlank
     private String desc;
 
     @NotBlank

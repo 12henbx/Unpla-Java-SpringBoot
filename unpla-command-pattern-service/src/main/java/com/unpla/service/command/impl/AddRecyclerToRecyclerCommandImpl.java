@@ -46,9 +46,9 @@ public class AddRecyclerToRecyclerCommandImpl implements AddRecyclerToRecyclerCo
                 .address(req.getAddress())
                 .coordinate(req.getCoordinate())
                 .description(req.getDescription())
-                .mainWasteCategories(req.getMainWasteCategories())
+                .mainWastePriceList(req.getMainWastePriceList())
                 .profilePhoto(photoProfilePath)
-                .subWasteCategories(req.getSubWasteCategories())
+                .subWastePriceList(req.getSubWastePriceList())
                 .build();
     }
 
@@ -59,9 +59,9 @@ public class AddRecyclerToRecyclerCommandImpl implements AddRecyclerToRecyclerCo
                 .address(recycler.getAddress())
                 .coordinate(recycler.getCoordinate())
                 .description(recycler.getDescription())
-                .mainWasteCategories(recycler.getMainWasteCategories())
+                .mainWastePriceList(recycler.getMainWastePriceList())
                 .profilePhoto(recycler.getProfilePhoto())
-                .subWasteCategories(recycler.getSubWasteCategories())
+                .subWastePriceList(recycler.getSubWastePriceList())
                 .lastModifiedDate(recycler.getLastModifiedDate())
                 .build();
     }

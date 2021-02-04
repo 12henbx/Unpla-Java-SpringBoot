@@ -13,6 +13,7 @@ import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
 @RestController
+@RequestMapping(value = "/api/notification")
 public class NotificationController {
 
     @Autowired
@@ -27,7 +28,7 @@ public class NotificationController {
 //    }
 
     @GetMapping(
-            value = "/notification/{userId}",
+            value = "/{userId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Mono<Response<NotificationGetListResponse>> getAllNotifListbyUserId(@PathVariable("User ID") String userId) {

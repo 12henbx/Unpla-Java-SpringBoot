@@ -60,7 +60,12 @@ public class UserController {
 
         return commandExecutor.execute(UserLoginToUserCommand.class, loginRequest)
                 .map((userAuth) -> {
-                    ResponseCookie cookie = ResponseCookie.from("cookieAuth", userAuth.getToken()).secure(true).httpOnly(true).build(); // TODO: harusnya secure true
+                    ResponseCookie cookie = ResponseCookie.from("cookieAuth", userAuth.getToken())
+                            .secure(true)
+                            .httpOnly(true)
+                            .maxAge(3600)
+                            .path("/")
+                            .build(); // TODO: harusnya secure true
 
                     return ResponseEntity.ok()
                             .header(HttpHeaders.SET_COOKIE, cookie.toString())

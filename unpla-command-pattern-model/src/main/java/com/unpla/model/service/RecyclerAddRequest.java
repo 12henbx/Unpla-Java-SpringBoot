@@ -1,8 +1,8 @@
 package com.unpla.model.service;
 
 import com.unpla.entity.embedded.Coordinate;
-import com.unpla.entity.enums.MainWasteCategory;
-import com.unpla.entity.enums.SubWasteCategory;
+import com.unpla.entity.embedded.MainWastePrice;
+import com.unpla.entity.embedded.SubWastePrice;
 import lombok.Builder;
 import lombok.Data;
 
@@ -29,7 +29,7 @@ public class RecyclerAddRequest implements ServiceRequest{
 
     private List<String> recycledProductId;
 
-    private List<MainWasteCategory> mainWasteCategories;
+    private List<MainWastePrice> mainWastePriceList;
 
-    private List<SubWasteCategory> subWasteCategories;
+    private List<SubWastePrice> subWastePriceList;
 }

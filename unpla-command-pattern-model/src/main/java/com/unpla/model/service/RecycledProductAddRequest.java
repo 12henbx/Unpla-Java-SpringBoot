@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 public class RecycledProductAddRequest implements ServiceRequest{
 
-    private String id;
+//    private String id;
 
     private List<String> productImages;
 

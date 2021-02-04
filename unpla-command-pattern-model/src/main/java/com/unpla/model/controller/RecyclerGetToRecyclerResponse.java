@@ -1,6 +1,8 @@
 package com.unpla.model.controller;
 
 import com.unpla.entity.embedded.Coordinate;
+import com.unpla.entity.embedded.MainWastePrice;
+import com.unpla.entity.embedded.SubWastePrice;
 import com.unpla.entity.enums.MainWasteCategory;
 import com.unpla.entity.enums.SubWasteCategory;
 import lombok.AllArgsConstructor;
@@ -35,7 +37,7 @@ public class RecyclerGetToRecyclerResponse {
 
     private List<String> recycledProductId;
 
-    private List<MainWasteCategory> mainWasteCategories;
+    private List<MainWastePrice> mainWastePriceList;
 
-    private List<SubWasteCategory> subWasteCategories;
+    private List<SubWastePrice> subWastePriceList;
 }

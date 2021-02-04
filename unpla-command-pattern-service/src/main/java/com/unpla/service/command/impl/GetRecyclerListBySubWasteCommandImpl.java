@@ -22,16 +22,25 @@ public class GetRecyclerListBySubWasteCommandImpl implements GetRecyclerListBySu
 
     @Override
     public Mono<RecyclerGetListBySubWasteResponse> execute(RecyclerGetListBySubWasteRequest request) {
-        return recyclerRepository.findRecyclersBySubWasteCategoriesContains(request.getSubWasteCategory())
+        return recyclerRepository.findRecyclersBySubWastePriceList(request.getSubWasteCategory())
                 .map(this::toRecyclerWebResponse)
                 .collectList()
                 .map(this::toWebResponse);
     }
 
     private RecyclerGetToRecyclerResponse toRecyclerWebResponse(Recycler recycler){
-        RecyclerGetToRecyclerResponse response = new RecyclerGetToRecyclerResponse();
-        BeanUtils.copyProperties(recycler, response);
-        return response;
+        return RecyclerGetToRecyclerResponse.builder()
+                .id(recycler.getId())
+                .address(recycler.getAddress())
+                .coordinate(recycler.getCoordinate())
+                .description(recycler.getDescription())
+                .headerPhoto(recycler.getHeaderPhoto())
+                .name(recycler.getName())
+                .profilePhoto(recycler.getProfilePhoto())
+                .mainWastePriceList(recycler.getMainWastePriceList())
+                .subWastePriceList(recycler.getSubWastePriceList())
+                .recycledProductId(recycler.getRecycledProductId())
+                .build();
     }
 
     private RecyclerGetListBySubWasteResponse toWebResponse(List<RecyclerGetToRecyclerResponse> recyclers){

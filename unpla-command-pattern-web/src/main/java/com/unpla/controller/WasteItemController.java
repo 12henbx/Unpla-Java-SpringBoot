@@ -19,6 +19,7 @@ import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
 @RestController
+@RequestMapping(value = "/api/waste-item")
 public class WasteItemController {
 
     @Autowired
@@ -33,7 +34,7 @@ public class WasteItemController {
     }
 
     @GetMapping(
-            value = "/waste-item/{username}/{wasteItemId}",
+            value = "/{username}/{wasteItemId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Mono<Response<WasteGetToWasteItemResponse>> getbyWasteItemId(@PathVariable("username") String username,
@@ -77,7 +78,7 @@ public class WasteItemController {
 //    }
 
     @GetMapping(
-            value = "/waste-item/{userId}",
+            value = "/{userId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Mono<Response<WasteGetListResponse>> getListbyUserId(@PathVariable("userId") String userId,

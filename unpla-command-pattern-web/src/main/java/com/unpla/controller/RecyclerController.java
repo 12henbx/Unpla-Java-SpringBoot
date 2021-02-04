@@ -17,12 +17,13 @@ import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
 @RestController
+@RequestMapping(value = "/api/recycler")
 public class RecyclerController {
 
     @Autowired
     private CommandExecutor commandExecutor;
 
-    @PostMapping(value = "/recycler/add", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Response<RecyclerAddResponse>> addRecycler(@RequestBody RecyclerAddRequest recyclerAddRequest) {
 
         return commandExecutor.execute(AddRecyclerToRecyclerCommand.class, recyclerAddRequest)

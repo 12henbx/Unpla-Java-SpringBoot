@@ -19,14 +19,21 @@ import java.util.List;
 public class ProductTransaction {
     @Id
     private String id;
+
     private String idRecyclerSeller;
+
     private String idUserBuyer;
+
     private List<String> idrecycledProducts;
+
     private int quantity;
+
     private long totalPrice;
 
     private String userId;
+
     private String recyclerId;
+
     private String cartId;
 
     private PaymentMethod paymentMethodEnum;
