@@ -5,11 +5,13 @@ import com.unpla.model.controller.RecycledProductAddResponse;
 import com.unpla.model.controller.RecycledProductGetListResponse;
 import com.unpla.model.controller.RecycledProductGetResponse;
 import com.unpla.model.controller.Response;
+import com.unpla.model.service.RProductGetListByRecyclerRequest;
 import com.unpla.model.service.RecycledProductAddRequest;
 import com.unpla.model.service.RecycledProductGetListRequest;
 import com.unpla.model.service.RecycledProductGetRequest;
 import com.unpla.service.command.AddReProductToReProductCommand;
 import com.unpla.service.command.GetReProductCommand;
+import com.unpla.service.command.GetReProductListByRecyclerCommand;
 import com.unpla.service.command.GetReProductListCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -48,6 +50,16 @@ public class ReProductController {
     )
     public Mono<Response<RecycledProductGetResponse>> reProductGet(@PathVariable("reProductId") String reProductId, RecycledProductGetRequest recycledProductGetRequest) {
         return commandExecutor.execute(GetReProductCommand.class, recycledProductGetRequest)
+                .map(Response::ok)
+                .subscribeOn(Schedulers.elastic());
+    }
+
+    @GetMapping(
+            value = "/all/{recyclerId}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Mono<Response<RecycledProductGetListResponse>> recyclerProductGetList(@PathVariable("recyclerId") String recyclerId, RProductGetListByRecyclerRequest getListByRecyclerRequest) {
+        return commandExecutor.execute(GetReProductListByRecyclerCommand.class, getListByRecyclerRequest)
                 .map(Response::ok)
                 .subscribeOn(Schedulers.elastic());
     }
