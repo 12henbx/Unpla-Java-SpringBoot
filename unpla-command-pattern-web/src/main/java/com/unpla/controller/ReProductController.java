@@ -48,19 +48,31 @@ public class ReProductController {
             value = "/get/{reProductId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<RecycledProductGetResponse>> reProductGet(@PathVariable("reProductId") String reProductId, RecycledProductGetRequest recycledProductGetRequest) {
-        return commandExecutor.execute(GetReProductCommand.class, recycledProductGetRequest)
+    public Mono<Response<RecycledProductGetResponse>> reProductGet(@PathVariable("reProductId") String reProductId) {
+        return commandExecutor.execute(GetReProductCommand.class, toRecycledProductReq(reProductId))
                 .map(Response::ok)
                 .subscribeOn(Schedulers.elastic());
     }
 
+    private RecycledProductGetRequest toRecycledProductReq(String reProductId){
+        return RecycledProductGetRequest.builder()
+                .recycledProductId(reProductId)
+                .build();
+    }
+
     @GetMapping(
-            value = "/all/{recyclerId}",
+            value = "/all/{userId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<RecycledProductGetListResponse>> recyclerProductGetList(@PathVariable("recyclerId") String recyclerId, RProductGetListByRecyclerRequest getListByRecyclerRequest) {
-        return commandExecutor.execute(GetReProductListByRecyclerCommand.class, getListByRecyclerRequest)
+    public Mono<Response<RecycledProductGetListResponse>> recyclerProductGetList(@PathVariable("userId") String userId) {
+        return commandExecutor.execute(GetReProductListByRecyclerCommand.class, toWebRequest(userId))
                 .map(Response::ok)
                 .subscribeOn(Schedulers.elastic());
+    }
+
+    private RProductGetListByRecyclerRequest toWebRequest(String userId){
+        return RProductGetListByRecyclerRequest.builder()
+                .userId(userId)
+                .build();
     }
 }

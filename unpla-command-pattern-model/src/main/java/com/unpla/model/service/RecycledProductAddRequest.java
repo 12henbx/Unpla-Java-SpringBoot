@@ -2,6 +2,7 @@ package com.unpla.model.service;
 
 import com.unpla.entity.embedded.Review;
 import com.unpla.entity.embedded.WasteTypeAmount;
+import com.unpla.entity.enums.SubWasteCategory;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.*;
@@ -22,17 +23,17 @@ public class RecycledProductAddRequest implements ServiceRequest{
 
     private int quantity;
 
-    private float totalRating;
+    private String description;
+
+//    private float totalRating;
 
     private List<Review> reviews;
 
-    private long purchasedTimes;
+//    private long purchasedTimes;
 
     private List<WasteTypeAmount> orderedWasteList;
 
-    private List<WasteTypeAmount> materialList;
+    private List<SubWasteCategory> materialList;
 
     private String recyclerId;
-
-    private boolean isDelete;
 }

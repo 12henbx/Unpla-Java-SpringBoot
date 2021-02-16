@@ -31,7 +31,7 @@ public class NotificationController {
             value = "/{userId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public Mono<Response<NotificationGetListResponse>> getAllNotifListbyUserId(@PathVariable("User ID") String userId) {
+    public Mono<Response<NotificationGetListResponse>> getAllNotifListbyUserId(@PathVariable("userId") String userId) {
         return commandExecutor.execute(GetNotifListByUserIdCommand.class, toGetListRecycler(userId))
                 .map(response -> Response.status(HttpStatus.OK, response))
                 .subscribeOn(Schedulers.elastic());

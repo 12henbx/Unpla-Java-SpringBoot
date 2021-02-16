@@ -16,6 +16,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class GetNotifListByUserIdCommandImpl implements GetNotifListByUserIdCommand {
@@ -42,7 +43,7 @@ public class GetNotifListByUserIdCommandImpl implements GetNotifListByUserIdComm
     }
 
     private NotificationGetListResponse toWebResponse(List<NotificationGetToNotificationResponse> notificationList) {
-        return NotificationGetListResponse.builder()
+        return NotificationGetListResponse.builder() // TODO : Belum terbagi jadi recycler notif dan user notif
                 .recyclerNotifList(notificationList)
                 .totalRecyclerNotif(notificationList.size())
                 .userNotifList(notificationList)
@@ -51,8 +52,20 @@ public class GetNotifListByUserIdCommandImpl implements GetNotifListByUserIdComm
     }
 
     private NotificationGetToNotificationResponse toGetNotificationWebResponse(Notification notification) {
-        NotificationGetToNotificationResponse response = new NotificationGetToNotificationResponse();
-        BeanUtils.copyProperties(notification, response);
-        return response;
+//        System.out.println(notification.toString() + " ini adalah notif");
+//        NotificationGetToNotificationResponse response = new NotificationGetToNotificationResponse();
+//        BeanUtils.copyProperties(notification, response);
+//        return response;
+
+        return NotificationGetToNotificationResponse.builder()
+                .id(notification.getId())
+                .idRecycler(notification.getIdRecycler())
+                .idUser(notification.getIdUser())
+                .isDelete(notification.isDelete())
+                .isRead(notification.isRead())
+                .itemId(notification.getItemId())
+                .notifGroupForRecycler(notification.getNotifGroupForRecycler())
+                .notificationType(notification.getNotificationType())
+                .build();
     }
 }

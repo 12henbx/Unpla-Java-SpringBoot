@@ -18,6 +18,8 @@ import java.util.List;
 public class WasteAddToWasteItemAndTransactionResponse {
     private Boolean isSuccess;
 
+    private List<String> photoListPath;
+
     private MainWasteCategory mainWasteCategory;
 
     private SubWasteCategory subWasteCategory;

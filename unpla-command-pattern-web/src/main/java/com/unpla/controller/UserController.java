@@ -5,17 +5,17 @@ import com.blibli.oss.command.CommandExecutor;
 //import com.unpla.config.security.PBKDF2Encoder;
 import com.unpla.model.controller.Response;
 import com.unpla.model.controller.UserAddResponse;
+import com.unpla.model.controller.UserGetRecyclerIdResponse;
 import com.unpla.model.controller.UserLoginResponse;
 import com.unpla.model.service.UserAddRequest;
 import com.unpla.model.service.LoginUserRequest;
+import com.unpla.model.service.UserGetRecyclerIdRequest;
 import com.unpla.service.command.AddUserToUserCommand;
+import com.unpla.service.command.GetRecyclerIdByUserIdCommand;
 import com.unpla.service.command.UserLoginToUserCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
@@ -25,6 +25,22 @@ public class UserController {
 
     @Autowired
     private CommandExecutor commandExecutor;
+
+    @GetMapping(
+            value = "/get/recycler/{userId}",
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
+    public Mono<Response<UserGetRecyclerIdResponse>> getRecyclerId(@PathVariable("userId") String userId) {
+        return commandExecutor.execute(GetRecyclerIdByUserIdCommand.class, toUserReq(userId))
+                .map(Response::ok)
+                .subscribeOn(Schedulers.elastic());
+    }
+
+    private UserGetRecyclerIdRequest toUserReq(String userId){
+        return UserGetRecyclerIdRequest.builder()
+                .userId(userId)
+                .build();
+    }
 
 //    @PostMapping("/login") // dari website content list di kiri
 //    public Mono<UserDetails> login(ServerWebExchange exchange) {

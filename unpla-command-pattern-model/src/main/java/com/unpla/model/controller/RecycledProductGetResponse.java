@@ -2,6 +2,7 @@ package com.unpla.model.controller;
 
 import com.unpla.entity.embedded.Review;
 import com.unpla.entity.embedded.WasteTypeAmount;
+import com.unpla.entity.enums.SubWasteCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +26,8 @@ public class RecycledProductGetResponse {
 
     private int quantity;
 
+    private String description;
+
     private float totalRating;
 
     private int submitRatingCount;
@@ -35,7 +38,7 @@ public class RecycledProductGetResponse {
 
     private List<WasteTypeAmount> orderedWasteList;
 
-    private List<WasteTypeAmount> materialList;
+    private List<SubWasteCategory> materialList;
 
     private String recyclerId;
 

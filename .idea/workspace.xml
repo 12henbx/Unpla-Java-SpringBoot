@@ -2,9 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a79dfca8-c45d-4046-ac4c-092a346c9b6d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-repository/src/main/java/com/unpla/repository/RecycledProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-repository/src/main/java/com/unpla/repository/RecycledProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/RecycledProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/RecycledProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/WasteItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/document/WasteItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/embedded/WasteTypeAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/src/main/java/com/unpla/entity/embedded/WasteTypeAmount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/RecycledProduct$RecycledProductBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/RecycledProduct$RecycledProductBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/RecycledProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/RecycledProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/WasteItem$WasteItemBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/WasteItem$WasteItemBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/WasteItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/document/WasteItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/embedded/WasteTypeAmount$WasteTypeAmountBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/embedded/WasteTypeAmount$WasteTypeAmountBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/embedded/WasteTypeAmount.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-entity/target/classes/com/unpla/entity/embedded/WasteTypeAmount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/RecycledProductGetListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/RecycledProductGetListResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/RecycledProductGetResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/RecycledProductGetResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/RecyclerGetListBySubWasteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/RecyclerGetListBySubWasteResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/WasteAddToWasteItemAndTransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/WasteAddToWasteItemAndTransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/WasteGetToWasteItemResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/controller/WasteGetToWasteItemResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/RProductGetListByRecyclerRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/RProductGetListByRecyclerRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/RecycledProductAddRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/RecycledProductAddRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/RecycledProductGetRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service/RecycledProductGetRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetListResponse$RecycledProductGetListResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetListResponse$RecycledProductGetListResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetListResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetListResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetResponse$RecycledProductGetResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetResponse$RecycledProductGetResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecycledProductGetResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecyclerGetListBySubWasteResponse$RecyclerGetListBySubWasteResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecyclerGetListBySubWasteResponse$RecyclerGetListBySubWasteResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecyclerGetListBySubWasteResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/RecyclerGetListBySubWasteResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteAddToWasteItemAndTransactionResponse$WasteAddToWasteItemAndTransactionResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteAddToWasteItemAndTransactionResponse$WasteAddToWasteItemAndTransactionResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteAddToWasteItemAndTransactionResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteAddToWasteItemAndTransactionResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteGetToWasteItemResponse$WasteGetToWasteItemResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteGetToWasteItemResponse$WasteGetToWasteItemResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteGetToWasteItemResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/controller/WasteGetToWasteItemResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductAddRequest$RecycledProductAddRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductAddRequest$RecycledProductAddRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductAddRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductAddRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductGetRequest$RecycledProductGetRequestBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductGetRequest$RecycledProductGetRequestBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductGetRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-model/target/classes/com/unpla/model/service/RecycledProductGetRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-repository/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-repository/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-repository/src/main/java/com/unpla/repository/RecyclerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-repository/src/main/java/com/unpla/repository/RecyclerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-repository/target/classes/com/unpla/repository/RecycledProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-repository/target/classes/com/unpla/repository/RecycledProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddReProductToReProductCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddReProductToReProductCommandImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddToWasteItemAndTransactionCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/AddToWasteItemAndTransactionCommandImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetNotifListByUserIdCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetNotifListByUserIdCommandImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetReProductListByRecyclerCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetReProductListByRecyclerCommandImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetRecyclerListBySubWasteCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetRecyclerListBySubWasteCommandImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteListByUserIdCommandImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/main/java/com/unpla/service/command/impl/GetWasteListByUserIdCommandImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/src/test/java/com/unpla/service/command/impl/AddRecyclerToRecyclerCommandImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/src/test/java/com/unpla/service/command/impl/AddRecyclerToRecyclerCommandImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddReProductToReProductCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddReProductToReProductCommandImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddToWasteItemAndTransactionCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/AddToWasteItemAndTransactionCommandImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetNotifListByUserIdCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetNotifListByUserIdCommandImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetRecyclerListBySubWasteCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetRecyclerListBySubWasteCommandImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteListByUserIdCommandImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-service/target/classes/com/unpla/service/command/impl/GetWasteListByUserIdCommandImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-service/target/test-classes/com/unpla/service/command/impl/AddRecyclerToRecyclerCommandImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/SpringUnplaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/SpringUnplaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/NotificationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/ReProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/ReProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/RecyclerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/RecyclerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteTransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/src/main/java/com/unpla/controller/WasteTransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/SpringUnplaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/SpringUnplaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/NotificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/ReProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/ReProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/RecyclerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/RecyclerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteTransactionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/unpla-command-pattern-web/target/classes/com/unpla/controller/WasteTransactionController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,9 +119,10 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowAnt.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/unpla-command-pattern-model/src/main/java/com/unpla/model/service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/unpla-command-pattern-service/src/test/java/com/unpla/service/command/impl" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -70,9 +132,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.unpla.repository" />
+      <recent name="com.unpla" />
       <recent name="com.unpla.service.command" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.unpla.repository" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Project Bootcamp Blibli Future batch 4\Project Phase 3\unpla-command-pattern\unpla-command-pattern-service\src\test\java\com\unpla\service\command\impl" />
       <recent name="E:\Project Bootcamp Blibli Future batch 4\Project Phase 3\unpla-command-pattern\unpla-command-pattern-model\src\main\java\com\unpla\model\service" />
       <recent name="E:\Project Bootcamp Blibli Future batch 4\Project Phase 3\unpla-command-pattern\unpla-command-pattern-properties\src\main\resources" />
     </key>
@@ -89,7 +157,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SpringUnplaApplication">
+    <configuration name="AddRecyclerToRecyclerCommandImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unpla-command-pattern-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unpla.service.command.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.unpla.service.command.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.unpla.service.command.impl.AddRecyclerToRecyclerCommandImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringUnplaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="unpla-command-pattern-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.unpla.SpringUnplaApplication" />
@@ -97,6 +180,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AddRecyclerToRecyclerCommandImplTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -207,7 +295,17 @@
       <workItem from="1612342732560" duration="6011000" />
       <workItem from="1612416043316" duration="13428000" />
       <workItem from="1612494464203" duration="3046000" />
-      <workItem from="1612606389766" duration="5172000" />
+      <workItem from="1612606389766" duration="5550000" />
+      <workItem from="1612675399762" duration="8582000" />
+      <workItem from="1612755875883" duration="16420000" />
+      <workItem from="1612842799684" duration="9849000" />
+      <workItem from="1612938818919" duration="8319000" />
+      <workItem from="1613016506342" duration="18891000" />
+      <workItem from="1613098560592" duration="5792000" />
+      <workItem from="1613193696141" duration="1622000" />
+      <workItem from="1613296769423" duration="3652000" />
+      <workItem from="1613406582776" duration="3585000" />
+      <workItem from="1613497005669" duration="690000" />
     </task>
     <servers />
   </component>
@@ -226,5 +324,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/unpla_command_pattern$AddRecyclerToRecyclerCommandImplTest.ic" NAME="AddRecyclerToRecyclerCommandImplTest Coverage Results" MODIFIED="1613030272770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.unpla.service.command.impl.*</FILTER>
+    </SUITE>
   </component>
 </project>

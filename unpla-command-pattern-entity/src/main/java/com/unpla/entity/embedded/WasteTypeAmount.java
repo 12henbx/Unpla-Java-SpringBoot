@@ -16,5 +16,5 @@ public class WasteTypeAmount {
 
     private String photoPath;
 
-    private int quantity;
+    private String quantityMagnitude;
 }

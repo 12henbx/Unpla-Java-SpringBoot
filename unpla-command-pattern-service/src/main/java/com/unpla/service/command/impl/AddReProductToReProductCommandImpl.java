@@ -54,14 +54,12 @@ public class AddReProductToReProductCommandImpl implements AddReProductToReProdu
                 .name(req.getName())
                 .price(req.getPrice())
                 .productImages(photosPath)
-                .purchasedTimes(req.getPurchasedTimes())
+                .description(req.getDescription())
                 .quantity(req.getQuantity())
                 .reviews(req.getReviews())
                 .recyclerId(req.getRecyclerId())
-                .totalRating(req.getTotalRating())
                 .materialList(req.getMaterialList())
                 .orderedWasteList(req.getOrderedWasteList())
-                .isDelete(Boolean.FALSE)
                 .build();
     }
 

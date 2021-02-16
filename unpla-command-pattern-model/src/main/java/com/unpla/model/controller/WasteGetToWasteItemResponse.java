@@ -20,7 +20,7 @@ public class WasteGetToWasteItemResponse {
 
     private String wasteItemId;
 
-    private List<String> photo;
+    private List<String> photoListPath;
 
     private MainWasteCategory mainWasteCategory;
 

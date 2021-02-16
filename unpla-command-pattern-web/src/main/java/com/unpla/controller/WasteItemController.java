@@ -78,7 +78,7 @@ public class WasteItemController {
 //    }
 
     @GetMapping(
-            value = "/{userId}",
+            value = "/all/{userId}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Mono<Response<WasteGetListResponse>> getListbyUserId(@PathVariable("userId") String userId,

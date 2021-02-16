@@ -22,7 +22,7 @@ public class WasteItem {
     @Id
     private String id;
 
-    private List<String> photo;
+    private List<String> photoListPath;
 
     private MainWasteCategory mainWasteCategory;
 
@@ -33,6 +33,8 @@ public class WasteItem {
     private float weightValue;
 
     private String userId;
+
+    private String wasteTransactionId;
 
     private Boolean isDelete;
 

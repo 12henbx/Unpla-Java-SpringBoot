@@ -15,5 +15,7 @@ public class RecycledProductGetListResponse {
 
     private int total;
 
+    private String recyclerId; // TODO : ini harus dihapus, dibikin endpoint sendiri
+
     private List<RecycledProductGetResponse> recycledProductList;
 }

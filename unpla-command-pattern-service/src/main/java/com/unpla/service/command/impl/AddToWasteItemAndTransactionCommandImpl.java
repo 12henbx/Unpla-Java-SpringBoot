@@ -67,14 +67,14 @@ public class AddToWasteItemAndTransactionCommandImpl implements AddToWasteItemAn
 
         return WasteItem.builder()
                 .id(randomUUID)
-                .photo(photosPath)
+                .photoListPath(photosPath)
                 .isDelete(Boolean.FALSE)
-                .photo(req.getPhotos())
                 .mainWasteCategory(req.getMainWasteCategory())
                 .subWasteCategory(req.getSubWasteCategory())
                 .weightValue(req.getWeightValue())
                 .magnitude(req.getMagnitude())
                 .userId(req.getUserId())
+                .wasteTransactionId(randomUUID)
                 .build();
     }
 
@@ -124,6 +124,7 @@ public class AddToWasteItemAndTransactionCommandImpl implements AddToWasteItemAn
         return WasteAddToWasteItemAndTransactionResponse.builder()
                 .mainWasteCategory(wasteItem.getMainWasteCategory())
                 .subWasteCategory(wasteItem.getSubWasteCategory())
+                .photoListPath(photosPath)
                 .weightValue(wasteItem.getWeightValue())
                 .magnitude(wasteItem.getMagnitude())
                 .userId(wasteItem.getUserId())

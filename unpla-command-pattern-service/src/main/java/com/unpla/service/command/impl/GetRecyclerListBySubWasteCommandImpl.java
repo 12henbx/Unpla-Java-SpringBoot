@@ -45,7 +45,7 @@ public class GetRecyclerListBySubWasteCommandImpl implements GetRecyclerListBySu
 
     private RecyclerGetListBySubWasteResponse toWebResponse(List<RecyclerGetToRecyclerResponse> recyclers){
         return RecyclerGetListBySubWasteResponse.builder()
-                .listWasteItem(recyclers)
+                .listRecycler(recyclers)
                 .build();
     }
 }
